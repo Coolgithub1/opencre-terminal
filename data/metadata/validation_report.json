@@ -1,0 +1,35 @@
+{
+  "status": "healthy",
+  "datasets": [
+    {
+      "name": "markets",
+      "records": 20,
+      "status": "valid"
+    },
+    {
+      "name": "market_metrics",
+      "records": 1000,
+      "status": "valid"
+    },
+    {
+      "name": "events",
+      "records": 1000,
+      "status": "valid"
+    },
+    {
+      "name": "transactions",
+      "records": 500,
+      "status": "valid"
+    },
+    {
+      "name": "properties",
+      "records": 100,
+      "status": "valid"
+    },
+    {
+      "name": "hotels",
+      "records": 50,
+      "status": "valid"
+    }
+  ]
+}

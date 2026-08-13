@@ -9,9 +9,16 @@
 - [x] Add architecture and implementation documentation.
 - [x] Verify type checking and production build.
 
+## Phase 2 — Data foundation (complete)
+
+- [x] Define versioned static-data contracts with required provenance fields.
+- [x] Add a deterministic synthetic-data generator using Polars and NumPy.
+- [x] Generate JSON and DuckDB-written Parquet files without a database server.
+- [x] Add dataset validation, pipeline health metadata, Pytest coverage, and GitHub Actions validation.
+- [x] Document the synthetic-data source and local pipeline.
+
 ## Deferred phases
 
-- [ ] Phase 2: Python pipelines, schemas, DuckDB, Parquet, and demo generator.
 - [ ] Phase 3: market analytics, normalization, and rankings.
 - [ ] Phase 4: configurable signal engine and audit-ready decompositions.
 - [ ] Phase 5: interactive terminal charts and tables.

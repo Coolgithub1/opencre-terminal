@@ -1,0 +1,38 @@
+{
+  "pipeline": "synthetic-demo",
+  "status": "healthy",
+  "last_updated": "2026-08-13T23:30:00Z",
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "datasets": [
+    {
+      "name": "markets",
+      "records": 20,
+      "status": "validated"
+    },
+    {
+      "name": "market_metrics",
+      "records": 1000,
+      "status": "validated"
+    },
+    {
+      "name": "events",
+      "records": 1000,
+      "status": "validated"
+    },
+    {
+      "name": "transactions",
+      "records": 500,
+      "status": "validated"
+    },
+    {
+      "name": "properties",
+      "records": 100,
+      "status": "validated"
+    },
+    {
+      "name": "hotels",
+      "records": 50,
+      "status": "validated"
+    }
+  ]
+}

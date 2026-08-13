@@ -2,9 +2,9 @@
 
 OpenCRE Terminal is an open-source, static-first commercial real estate intelligence terminal. It is designed to run entirely through GitHub Pages and GitHub Actions, without a server, database, paid AI service, or proprietary data dependency.
 
-## Phase 1 status
+## Current status
 
-This repository currently implements **Phase 1**: a Vite + React + TypeScript terminal shell, synthetic demo datasets, and GitHub Pages deployment. All numbers shown in the application are explicitly labeled **DEMO DATA — synthetic, not real market data**.
+Phases 1 and 2 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, and a reproducible Python data foundation. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**.
 
 ## Local development
 
@@ -12,6 +12,14 @@ This repository currently implements **Phase 1**: a Vite + React + TypeScript te
 cd frontend
 npm install
 npm run dev
+```
+
+Generate and validate the static demo datasets:
+
+```bash
+python -m pip install -r requirements.txt
+python scripts/run_pipeline.py
+python scripts/validate_data.py
 ```
 
 ## Verification

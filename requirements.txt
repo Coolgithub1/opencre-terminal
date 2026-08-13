@@ -1,0 +1,6 @@
+duckdb>=1.2,<2
+numpy>=2.0,<3
+polars>=1.0,<2
+pyarrow>=19,<24
+pytest>=8,<10
+ruff>=0.9,<1

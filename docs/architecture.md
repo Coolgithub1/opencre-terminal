@@ -8,7 +8,7 @@ Public sources -> GitHub Actions pipelines -> JSON / Parquet datasets -> GitHub 
 
 GitHub Actions will eventually fetch, validate, normalize, analyze, and publish datasets. Python and DuckDB may be used in those ephemeral workflows, but no database service is deployed. Secrets remain inside Actions and are never bundled into the frontend.
 
-Phase 1 contains only the frontend foundation and synthetic static data. It makes no API calls and does not imply that any displayed metric is real. Later phases will add public-data pipelines, provenance metadata, deterministic analytical models, and an optional data-provider interface for legitimately licensed providers. No proprietary-data scraping, AI model, embedding system, or LLM integration is in scope.
+Phases 1 and 2 contain the frontend foundation plus a deterministic, synthetic static-data pipeline. The Python layer uses Polars and NumPy to generate test records, then uses in-memory DuckDB to write and validate Parquet. It makes no API calls, starts no service, and retains no database file. Later phases will add public-data pipelines, deterministic analytical models, and an optional data-provider interface for legitimately licensed providers. No proprietary-data scraping, AI model, embedding system, or LLM integration is in scope.
 
 ## Frontend data contract
 
@@ -17,3 +17,5 @@ The frontend obtains data only through `src/data/client.ts`. Dataset paths are r
 ## Deployment
 
 The Pages workflow installs frontend dependencies, runs type checking and a production build, uploads `frontend/dist`, and deploys it with the minimum Pages permissions. Repository content writes are not required by the Phase 1 deployment workflow.
+
+The `data-validation` workflow runs the Phase 2 generator and validator in an ephemeral GitHub Actions environment. It has read-only repository access and produces no persistent service or secret-dependent output.

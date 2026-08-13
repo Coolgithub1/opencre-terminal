@@ -3,7 +3,7 @@
 The project is delivered in deliberately bounded phases to keep its static-first architecture verifiable.
 
 1. **Foundation:** Vite React TypeScript frontend, GitHub Pages, terminal UI, synthetic demo data.
-2. **Data foundation:** Python 3.12 pipelines, schemas, DuckDB/Parquet processing, generated demo datasets.
+2. **Data foundation (complete):** Python 3.12-compatible pipelines, schemas, in-memory DuckDB/Parquet processing, generated demo datasets, validation, and CI.
 3. **Market analytics:** deterministic normalization, market metrics, rankings.
 4. **Signals:** weighted scores, validations, history, mathematical explanations.
 5. **Terminal analytics:** charts, tables, filtering, lazy data loading.

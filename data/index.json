@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "last_updated": "2026-08-13T23:30:00Z",
+  "datasets": [
+    {
+      "name": "markets",
+      "path": "markets/markets.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "market_metrics",
+      "path": "markets/market_metrics.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 1000,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "events",
+      "path": "events/history.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 1000,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "transactions",
+      "path": "transactions/transactions.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 500,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "properties",
+      "path": "demo/properties.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 100,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "hotels",
+      "path": "demo/hotels.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 50,
+      "schema_version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "sources": [
+    {
+      "source": "OpenCRE synthetic demo generator",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/data-sources.md",
+      "license": "Synthetic demo data; no third-party data is included.",
+      "update_frequency": "Generated on demand or in GitHub Actions.",
+      "methodology": "Deterministic synthetic demo data generated from a fixed seed for software testing; it is not an observation of a real market."
+    }
+  ]
+}

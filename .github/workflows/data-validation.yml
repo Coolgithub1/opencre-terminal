@@ -1,0 +1,41 @@
+name: Validate static data pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pipelines/**"
+      - "scripts/**"
+      - "tests/**"
+      - "requirements.txt"
+      - "pyproject.toml"
+      - "data/**"
+      - ".github/workflows/data-validation.yml"
+  pull_request:
+    paths:
+      - "pipelines/**"
+      - "scripts/**"
+      - "tests/**"
+      - "requirements.txt"
+      - "pyproject.toml"
+      - "data/**"
+      - ".github/workflows/data-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+      - run: python -m ruff check pipelines scripts tests
+      - run: python -m pytest
+      - run: python scripts/run_pipeline.py --output-dir generated-data
+      - run: python scripts/validate_data.py --data-dir generated-data
