@@ -1,0 +1,22 @@
+{
+  "data_label": "DEMO DATA — all markets, scores, events, and indicators are synthetic and do not represent real-world data.",
+  "updated_at": "Synthetic snapshot · 2026-08-13 19:30 ET",
+  "signals": [
+    { "market": "Charleston", "asset_class": "Industrial", "score": 87, "change": 4 },
+    { "market": "Columbus", "asset_class": "Industrial", "score": 83, "change": 2 },
+    { "market": "Nashville", "asset_class": "Hotel", "score": 81, "change": 5 },
+    { "market": "Dallas", "asset_class": "Multifamily", "score": 78, "change": 1 },
+    { "market": "Phoenix", "asset_class": "Industrial", "score": 76, "change": -3 }
+  ],
+  "events": [
+    { "type": "Corporate expansion", "location": "Charleston, SC", "detail": "Synthetic logistics expansion event", "time": "2h ago" },
+    { "type": "Infrastructure", "location": "Columbus, OH", "detail": "Synthetic transit investment event", "time": "5h ago" },
+    { "type": "Construction", "location": "Dallas, TX", "detail": "Synthetic mixed-use construction event", "time": "1d ago" },
+    { "type": "Hotel transaction", "location": "Nashville, TN", "detail": "Synthetic hospitality transaction event", "time": "1d ago" }
+  ],
+  "indicators": [
+    { "label": "Employment growth", "value": "2.8%", "change": "+0.4 pp" },
+    { "label": "Rent momentum", "value": "4.1%", "change": "+0.7 pp" },
+    { "label": "Corporate event velocity", "value": "118", "change": "+12.3%" }
+  ]
+}
