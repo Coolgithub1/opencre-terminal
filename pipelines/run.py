@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from pipelines.analytics.market_state import build_market_analytics, latest_market_analytics
+from pipelines.analytics.rankings import build_rankings
 from pipelines.common.config import PipelineConfig
 from pipelines.common.io import write_json, write_parquet
 from pipelines.demo.generator import (
@@ -32,6 +34,16 @@ def _dataset_index(config: PipelineConfig) -> dict[str, object]:
                 "schema_version": "1.0.0",
             }
             for spec in DATASET_SPECS
+        ]
+        + [
+            {
+                "name": "market_rankings",
+                "path": "markets/rankings.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": 40,
+                "schema_version": "1.0.0",
+            }
         ],
     }
 
@@ -39,6 +51,9 @@ def _dataset_index(config: PipelineConfig) -> dict[str, object]:
 def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     """Generate, validate, and describe all Phase 2 data without retaining a database."""
     frames = generate_demo_frames(config)
+    market_analytics = build_market_analytics(frames.market_metrics, frames.events)
+    latest_analytics = latest_market_analytics(market_analytics)
+    rankings = build_rankings(latest_analytics)
     frame_by_name = {
         "markets": frames.markets,
         "market_metrics": frames.market_metrics,
@@ -46,6 +61,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
         "transactions": frames.transactions,
         "properties": frames.properties,
         "hotels": frames.hotels,
+        "market_analytics": market_analytics,
+        "latest_market_analytics": latest_analytics,
     }
     output_dir = config.output_dir
 
@@ -60,6 +77,7 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
 
     events = frame_by_name["events"].sort("event_date", descending=True).head(20)
     write_json(output_dir / "events/latest.json", events.to_dicts())
+    write_json(output_dir / "markets/rankings.json", rankings)
     write_json(output_dir / "index.json", _dataset_index(config))
     write_json(
         output_dir / "metadata/sources.json",
@@ -72,7 +90,17 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                     "license": "Synthetic demo data; no third-party data is included.",
                     "update_frequency": "Generated on demand or in GitHub Actions.",
                     "methodology": METHODOLOGY,
-                }
+                },
+                {
+                    "source": "OpenCRE deterministic market analytics",
+                    "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/analytics.md",
+                    "license": "Derived only from OpenCRE synthetic demo data.",
+                    "update_frequency": "Generated on demand or in GitHub Actions.",
+                    "methodology": (
+                        "Historical-percentile normalization and transparent weighted "
+                        "descriptive analytics."
+                    ),
+                },
             ],
         },
     )
@@ -90,7 +118,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
             "datasets": [
                 {"name": spec.name, "records": spec.expected_rows, "status": "validated"}
                 for spec in DATASET_SPECS
-            ],
+            ]
+            + [{"name": "market_rankings", "records": 40, "status": "validated"}],
         },
     )
 

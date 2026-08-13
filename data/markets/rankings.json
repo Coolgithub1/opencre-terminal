@@ -1,0 +1,467 @@
+{
+  "schema_version": "1.0.0",
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "as_of_date": "2026-08-01",
+  "normalization_method": "historical_percentile",
+  "source": "OpenCRE deterministic market analytics",
+  "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/analytics.md",
+  "methodology": "Historical-percentile normalization within each synthetic market. Demand combines employment and population growth; supply balance inverses vacancy and construction pipeline; performance combines rent growth and absorption; capital activity reflects transaction volume; event activity reflects monthly synthetic event counts. Market activity is a weighted descriptive index, not an investment recommendation or causal claim.",
+  "rankings": {
+    "top_markets": [
+      {
+        "rank": 1,
+        "market_id": "orlando-fl",
+        "market_name": "Orlando",
+        "asset_class": "Hotel",
+        "ranking_metric": "market_activity_score",
+        "score": 74.235,
+        "market_activity_score": 74.235,
+        "six_month_change": 25.96,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "seattle-wa",
+        "market_name": "Seattle",
+        "asset_class": "Industrial",
+        "ranking_metric": "market_activity_score",
+        "score": 72.15,
+        "market_activity_score": 72.15,
+        "six_month_change": 29.535,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "san-antonio-tx",
+        "market_name": "San Antonio",
+        "asset_class": "Retail",
+        "ranking_metric": "market_activity_score",
+        "score": 68.325,
+        "market_activity_score": 68.325,
+        "six_month_change": 25.265,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "austin-tx",
+        "market_name": "Austin",
+        "asset_class": "Multifamily",
+        "ranking_metric": "market_activity_score",
+        "score": 68.025,
+        "market_activity_score": 68.025,
+        "six_month_change": 12.855,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "chicago-il",
+        "market_name": "Chicago",
+        "asset_class": "Multifamily",
+        "ranking_metric": "market_activity_score",
+        "score": 67.15,
+        "market_activity_score": 67.15,
+        "six_month_change": 28.25,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "bottom_markets": [
+      {
+        "rank": 1,
+        "market_id": "miami-fl",
+        "market_name": "Miami",
+        "asset_class": "Retail",
+        "ranking_metric": "market_activity_score",
+        "score": 44.675,
+        "market_activity_score": 44.675,
+        "six_month_change": 0.36,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "charlotte-nc",
+        "market_name": "Charlotte",
+        "asset_class": "Multifamily",
+        "ranking_metric": "market_activity_score",
+        "score": 47.045,
+        "market_activity_score": 47.045,
+        "six_month_change": -9.59,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "dallas-tx",
+        "market_name": "Dallas",
+        "asset_class": "Retail",
+        "ranking_metric": "market_activity_score",
+        "score": 49.53,
+        "market_activity_score": 49.53,
+        "six_month_change": 13.195,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "phoenix-az",
+        "market_name": "Phoenix",
+        "asset_class": "Hotel",
+        "ranking_metric": "market_activity_score",
+        "score": 51.86,
+        "market_activity_score": 51.86,
+        "six_month_change": 9.39,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "las-vegas-nv",
+        "market_name": "Las Vegas",
+        "asset_class": "Retail",
+        "ranking_metric": "market_activity_score",
+        "score": 53.195,
+        "market_activity_score": 53.195,
+        "six_month_change": 9.24,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "fastest_improving": [
+      {
+        "rank": 1,
+        "market_id": "seattle-wa",
+        "market_name": "Seattle",
+        "asset_class": "Industrial",
+        "ranking_metric": "six_month_change",
+        "score": 29.535,
+        "market_activity_score": 72.15,
+        "six_month_change": 29.535,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "chicago-il",
+        "market_name": "Chicago",
+        "asset_class": "Multifamily",
+        "ranking_metric": "six_month_change",
+        "score": 28.25,
+        "market_activity_score": 67.15,
+        "six_month_change": 28.25,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "orlando-fl",
+        "market_name": "Orlando",
+        "asset_class": "Hotel",
+        "ranking_metric": "six_month_change",
+        "score": 25.96,
+        "market_activity_score": 74.235,
+        "six_month_change": 25.96,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "san-antonio-tx",
+        "market_name": "San Antonio",
+        "asset_class": "Retail",
+        "ranking_metric": "six_month_change",
+        "score": 25.265,
+        "market_activity_score": 68.325,
+        "six_month_change": 25.265,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "atlanta-ga",
+        "market_name": "Atlanta",
+        "asset_class": "Industrial",
+        "ranking_metric": "six_month_change",
+        "score": 22.21,
+        "market_activity_score": 60.385,
+        "six_month_change": 22.21,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "fastest_deteriorating": [
+      {
+        "rank": 1,
+        "market_id": "charlotte-nc",
+        "market_name": "Charlotte",
+        "asset_class": "Multifamily",
+        "ranking_metric": "six_month_change",
+        "score": -9.59,
+        "market_activity_score": 47.045,
+        "six_month_change": -9.59,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "miami-fl",
+        "market_name": "Miami",
+        "asset_class": "Retail",
+        "ranking_metric": "six_month_change",
+        "score": 0.36,
+        "market_activity_score": 44.675,
+        "six_month_change": 0.36,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "nashville-tn",
+        "market_name": "Nashville",
+        "asset_class": "Office",
+        "ranking_metric": "six_month_change",
+        "score": 2.025,
+        "market_activity_score": 55.26,
+        "six_month_change": 2.025,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "asset_class": "Office",
+        "ranking_metric": "six_month_change",
+        "score": 4.405,
+        "market_activity_score": 66.135,
+        "six_month_change": 4.405,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "columbus-oh",
+        "market_name": "Columbus",
+        "asset_class": "Multifamily",
+        "ranking_metric": "six_month_change",
+        "score": 6.795,
+        "market_activity_score": 60.055,
+        "six_month_change": 6.795,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "strongest_demand": [
+      {
+        "rank": 1,
+        "market_id": "atlanta-ga",
+        "market_name": "Atlanta",
+        "asset_class": "Industrial",
+        "ranking_metric": "demand_score",
+        "score": 90.4,
+        "market_activity_score": 60.385,
+        "six_month_change": 22.21,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "minneapolis-mn",
+        "market_name": "Minneapolis",
+        "asset_class": "Hotel",
+        "ranking_metric": "demand_score",
+        "score": 80.8,
+        "market_activity_score": 64.49,
+        "six_month_change": 18.345,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "asset_class": "Office",
+        "ranking_metric": "demand_score",
+        "score": 77.6,
+        "market_activity_score": 66.135,
+        "six_month_change": 4.405,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "orlando-fl",
+        "market_name": "Orlando",
+        "asset_class": "Hotel",
+        "ranking_metric": "demand_score",
+        "score": 77.2,
+        "market_activity_score": 74.235,
+        "six_month_change": 25.96,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "austin-tx",
+        "market_name": "Austin",
+        "asset_class": "Multifamily",
+        "ranking_metric": "demand_score",
+        "score": 76.8,
+        "market_activity_score": 68.025,
+        "six_month_change": 12.855,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "weakest_supply": [
+      {
+        "rank": 1,
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "asset_class": "Office",
+        "ranking_metric": "supply_balance_score",
+        "score": 10.5,
+        "market_activity_score": 66.135,
+        "six_month_change": 4.405,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "atlanta-ga",
+        "market_name": "Atlanta",
+        "asset_class": "Industrial",
+        "ranking_metric": "supply_balance_score",
+        "score": 12.7,
+        "market_activity_score": 60.385,
+        "six_month_change": 22.21,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "austin-tx",
+        "market_name": "Austin",
+        "asset_class": "Multifamily",
+        "ranking_metric": "supply_balance_score",
+        "score": 14.3,
+        "market_activity_score": 68.025,
+        "six_month_change": 12.855,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "phoenix-az",
+        "market_name": "Phoenix",
+        "asset_class": "Hotel",
+        "ranking_metric": "supply_balance_score",
+        "score": 15.2,
+        "market_activity_score": 51.86,
+        "six_month_change": 9.39,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "houston-tx",
+        "market_name": "Houston",
+        "asset_class": "Office",
+        "ranking_metric": "supply_balance_score",
+        "score": 19.6,
+        "market_activity_score": 58.08,
+        "six_month_change": 14.06,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "highest_rent_momentum": [
+      {
+        "rank": 1,
+        "market_id": "salt-lake-city-ut",
+        "market_name": "Salt Lake City",
+        "asset_class": "Industrial",
+        "ranking_metric": "rent_growth_percentile",
+        "score": 98.0,
+        "market_activity_score": 59.1,
+        "six_month_change": 16.325,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "asset_class": "Office",
+        "ranking_metric": "rent_growth_percentile",
+        "score": 98.0,
+        "market_activity_score": 66.135,
+        "six_month_change": 4.405,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "miami-fl",
+        "market_name": "Miami",
+        "asset_class": "Retail",
+        "ranking_metric": "rent_growth_percentile",
+        "score": 96.0,
+        "market_activity_score": 44.675,
+        "six_month_change": 0.36,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "charleston-sc",
+        "market_name": "Charleston",
+        "asset_class": "Industrial",
+        "ranking_metric": "rent_growth_percentile",
+        "score": 96.0,
+        "market_activity_score": 64.415,
+        "six_month_change": 11.6,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "nashville-tn",
+        "market_name": "Nashville",
+        "asset_class": "Office",
+        "ranking_metric": "rent_growth_percentile",
+        "score": 94.0,
+        "market_activity_score": 55.26,
+        "six_month_change": 2.025,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "highest_investment_activity": [
+      {
+        "rank": 1,
+        "market_id": "phoenix-az",
+        "market_name": "Phoenix",
+        "asset_class": "Hotel",
+        "ranking_metric": "capital_activity_score",
+        "score": 94.0,
+        "market_activity_score": 51.86,
+        "six_month_change": 9.39,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "raleigh-nc",
+        "market_name": "Raleigh",
+        "asset_class": "Hotel",
+        "ranking_metric": "capital_activity_score",
+        "score": 88.0,
+        "market_activity_score": 66.37,
+        "six_month_change": 18.935,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "seattle-wa",
+        "market_name": "Seattle",
+        "asset_class": "Industrial",
+        "ranking_metric": "capital_activity_score",
+        "score": 86.0,
+        "market_activity_score": 72.15,
+        "six_month_change": 29.535,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "orlando-fl",
+        "market_name": "Orlando",
+        "asset_class": "Hotel",
+        "ranking_metric": "capital_activity_score",
+        "score": 84.0,
+        "market_activity_score": 74.235,
+        "six_month_change": 25.96,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "asset_class": "Office",
+        "ranking_metric": "capital_activity_score",
+        "score": 82.0,
+        "market_activity_score": 66.135,
+        "six_month_change": 4.405,
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ]
+  }
+}

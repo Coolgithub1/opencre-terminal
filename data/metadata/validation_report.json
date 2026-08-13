@@ -12,6 +12,16 @@
       "status": "valid"
     },
     {
+      "name": "market_analytics",
+      "records": 1000,
+      "status": "valid"
+    },
+    {
+      "name": "latest_market_analytics",
+      "records": 20,
+      "status": "valid"
+    },
+    {
       "name": "events",
       "records": 1000,
       "status": "valid"
@@ -29,6 +39,11 @@
     {
       "name": "hotels",
       "records": 50,
+      "status": "valid"
+    },
+    {
+      "name": "market_rankings",
+      "records": 40,
       "status": "valid"
     }
   ]

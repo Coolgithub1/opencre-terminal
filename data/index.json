@@ -20,6 +20,22 @@
       "schema_version": "1.0.0"
     },
     {
+      "name": "market_analytics",
+      "path": "markets/market_analytics.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 1000,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "latest_market_analytics",
+      "path": "markets/latest_analytics.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
+    },
+    {
       "name": "events",
       "path": "events/history.parquet",
       "format": "parquet",
@@ -49,6 +65,14 @@
       "format": "parquet",
       "last_updated": "2026-08-13T23:30:00Z",
       "record_count": 50,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "market_rankings",
+      "path": "markets/rankings.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 40,
       "schema_version": "1.0.0"
     }
   ]

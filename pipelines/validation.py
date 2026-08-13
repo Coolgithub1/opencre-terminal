@@ -8,6 +8,7 @@ from typing import Any
 
 import duckdb
 
+from pipelines.analytics.rankings import RANKING_DEFINITIONS
 from pipelines.schemas import DATASET_SPECS, PROVENANCE_COLUMNS
 
 
@@ -82,5 +83,20 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
                     f"{spec.name}: missing provenance values {null_provenance}"
                 )
             records.append({"name": spec.name, "records": row_count, "status": "valid"})
+
+    rankings_path = data_dir / "markets/rankings.json"
+    if "markets/rankings.json" not in indexed_paths:
+        raise DataValidationError("market rankings are absent from data/index.json")
+    if not rankings_path.exists():
+        raise DataValidationError(f"Missing market rankings dataset: {rankings_path}")
+    rankings = json.loads(rankings_path.read_text(encoding="utf-8"))
+    ranking_lists = rankings.get("rankings", {})
+    for ranking_name in RANKING_DEFINITIONS:
+        entries = ranking_lists.get(ranking_name)
+        if not isinstance(entries, list) or len(entries) != 5:
+            raise DataValidationError(f"{ranking_name}: expected five ranking entries")
+        if [entry.get("rank") for entry in entries] != [1, 2, 3, 4, 5]:
+            raise DataValidationError(f"{ranking_name}: ranks must be consecutive from one to five")
+    records.append({"name": "market_rankings", "records": 40, "status": "valid"})
 
     return {"status": "healthy", "datasets": records}

@@ -7,6 +7,13 @@
       "license": "Synthetic demo data; no third-party data is included.",
       "update_frequency": "Generated on demand or in GitHub Actions.",
       "methodology": "Deterministic synthetic demo data generated from a fixed seed for software testing; it is not an observation of a real market."
+    },
+    {
+      "source": "OpenCRE deterministic market analytics",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/analytics.md",
+      "license": "Derived only from OpenCRE synthetic demo data.",
+      "update_frequency": "Generated on demand or in GitHub Actions.",
+      "methodology": "Historical-percentile normalization and transparent weighted descriptive analytics."
     }
   ]
 }

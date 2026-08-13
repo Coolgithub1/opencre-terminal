@@ -8,7 +8,7 @@ Public sources -> GitHub Actions pipelines -> JSON / Parquet datasets -> GitHub 
 
 GitHub Actions will eventually fetch, validate, normalize, analyze, and publish datasets. Python and DuckDB may be used in those ephemeral workflows, but no database service is deployed. Secrets remain inside Actions and are never bundled into the frontend.
 
-Phases 1 and 2 contain the frontend foundation plus a deterministic, synthetic static-data pipeline. The Python layer uses Polars and NumPy to generate test records, then uses in-memory DuckDB to write and validate Parquet. It makes no API calls, starts no service, and retains no database file. Later phases will add public-data pipelines, deterministic analytical models, and an optional data-provider interface for legitimately licensed providers. No proprietary-data scraping, AI model, embedding system, or LLM integration is in scope.
+Phases 1 through 3 contain the frontend foundation, a deterministic synthetic-data pipeline, and audited market analytics/rankings. The Python layer uses Polars and NumPy to generate and normalize test records, then uses in-memory DuckDB to write and validate Parquet. It makes no API calls, starts no service, and retains no database file. Later phases will add public-data pipelines, signal models, and an optional data-provider interface for legitimately licensed providers. No proprietary-data scraping, AI model, embedding system, or LLM integration is in scope.
 
 ## Frontend data contract
 

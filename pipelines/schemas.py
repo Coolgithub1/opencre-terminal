@@ -59,6 +59,46 @@ DATASET_SPECS = (
         "parquet",
     ),
     DatasetSpec(
+        "market_analytics",
+        Path("markets/market_analytics.parquet"),
+        1_000,
+        frozenset(
+            {
+                "market_id",
+                "market_activity_score",
+                "demand_score",
+                "supply_balance_score",
+                "performance_score",
+                "capital_activity_score",
+                "event_activity_score",
+                "six_month_change",
+                "normalization_method",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "parquet",
+    ),
+    DatasetSpec(
+        "latest_market_analytics",
+        Path("markets/latest_analytics.json"),
+        20,
+        frozenset(
+            {
+                "market_id",
+                "market_activity_score",
+                "demand_score",
+                "supply_balance_score",
+                "performance_score",
+                "capital_activity_score",
+                "event_activity_score",
+                "six_month_change",
+                "normalization_method",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "json",
+    ),
+    DatasetSpec(
         "events",
         Path("events/history.parquet"),
         1_000,
