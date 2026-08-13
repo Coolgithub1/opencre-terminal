@@ -10,6 +10,7 @@ import duckdb
 
 from pipelines.analytics.rankings import RANKING_DEFINITIONS
 from pipelines.schemas import DATASET_SPECS, PROVENANCE_COLUMNS
+from pipelines.signals.config import DEFAULT_SIGNAL_DEFINITIONS
 
 
 class DataValidationError(ValueError):
@@ -98,5 +99,44 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
         if [entry.get("rank") for entry in entries] != [1, 2, 3, 4, 5]:
             raise DataValidationError(f"{ranking_name}: ranks must be consecutive from one to five")
     records.append({"name": "market_rankings", "records": 40, "status": "valid"})
+
+    signal_rankings_path = data_dir / "signals/rankings.json"
+    signal_explanations_path = data_dir / "signals/explanations.json"
+    signal_configs_path = data_dir / "metadata/signal_configs.json"
+    expected_signal_paths = {
+        "signals/rankings.json",
+        "signals/explanations.json",
+        "metadata/signal_configs.json",
+    }
+    if not expected_signal_paths.issubset(indexed_paths):
+        raise DataValidationError("signal metadata is absent from data/index.json")
+    if not signal_rankings_path.exists() or not signal_explanations_path.exists():
+        raise DataValidationError("signal ranking or explanation output is missing")
+    signal_rankings = json.loads(signal_rankings_path.read_text(encoding="utf-8"))
+    for ranking_name in ("top_signals", "bottom_signals"):
+        entries = signal_rankings.get("rankings", {}).get(ranking_name)
+        if not isinstance(entries, list) or len(entries) != 10:
+            raise DataValidationError(f"{ranking_name}: expected ten signal ranking entries")
+        if [entry.get("rank") for entry in entries] != list(range(1, 11)):
+            raise DataValidationError(f"{ranking_name}: ranks must be consecutive from one to ten")
+    explanations = _json_rows(signal_explanations_path)
+    if len(explanations) != 20 or any(len(row.get("components", [])) != 6 for row in explanations):
+        raise DataValidationError("signal explanations must contain 20 six-component records")
+    signal_configs = json.loads(signal_configs_path.read_text(encoding="utf-8"))
+    if len(signal_configs.get("configurations", [])) != len(DEFAULT_SIGNAL_DEFINITIONS):
+        raise DataValidationError(
+            "signal configuration count does not match the registered definitions"
+        )
+    records.extend(
+        [
+            {"name": "signal_rankings", "records": 20, "status": "valid"},
+            {"name": "signal_explanations", "records": 20, "status": "valid"},
+            {
+                "name": "signal_configurations",
+                "records": len(DEFAULT_SIGNAL_DEFINITIONS),
+                "status": "valid",
+            },
+        ]
+    )
 
     return {"status": "healthy", "datasets": records}

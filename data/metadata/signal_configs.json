@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0.0",
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "source": "OpenCRE deterministic market signal engine",
+  "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/signals.md",
+  "methodology": "The signal is the sum of component score multiplied by explicit component weight. Each component is a 0–100 historical-percentile metric generated from synthetic data. Scores describe historical associations only and do not claim causation or predict performance.",
+  "configurations": [
+    {
+      "key": "industrial_growth",
+      "name": "Industrial Growth",
+      "asset_class": "Industrial",
+      "version": "1.0.0",
+      "components": [
+        {
+          "key": "employment",
+          "label": "Employment",
+          "source_field": "employment_growth_percentile",
+          "weight": 25
+        },
+        {
+          "key": "rent_growth",
+          "label": "Rent Growth",
+          "source_field": "rent_growth_percentile",
+          "weight": 20
+        },
+        {
+          "key": "absorption",
+          "label": "Absorption",
+          "source_field": "absorption_percentile",
+          "weight": 20
+        },
+        {
+          "key": "vacancy",
+          "label": "Vacancy",
+          "source_field": "vacancy_percentile_inverse",
+          "weight": 15
+        },
+        {
+          "key": "investment",
+          "label": "Investment",
+          "source_field": "capital_activity_score",
+          "weight": 10
+        },
+        {
+          "key": "construction",
+          "label": "Construction",
+          "source_field": "construction_percentile_inverse",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "key": "multifamily_growth",
+      "name": "Multifamily Growth",
+      "asset_class": "Multifamily",
+      "version": "1.0.0",
+      "components": [
+        {
+          "key": "employment",
+          "label": "Employment",
+          "source_field": "employment_growth_percentile",
+          "weight": 25
+        },
+        {
+          "key": "rent_growth",
+          "label": "Rent Growth",
+          "source_field": "rent_growth_percentile",
+          "weight": 20
+        },
+        {
+          "key": "absorption",
+          "label": "Absorption",
+          "source_field": "absorption_percentile",
+          "weight": 20
+        },
+        {
+          "key": "vacancy",
+          "label": "Vacancy",
+          "source_field": "vacancy_percentile_inverse",
+          "weight": 15
+        },
+        {
+          "key": "investment",
+          "label": "Investment",
+          "source_field": "capital_activity_score",
+          "weight": 10
+        },
+        {
+          "key": "construction",
+          "label": "Construction",
+          "source_field": "construction_percentile_inverse",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "key": "office_growth",
+      "name": "Office Growth",
+      "asset_class": "Office",
+      "version": "1.0.0",
+      "components": [
+        {
+          "key": "employment",
+          "label": "Employment",
+          "source_field": "employment_growth_percentile",
+          "weight": 25
+        },
+        {
+          "key": "rent_growth",
+          "label": "Rent Growth",
+          "source_field": "rent_growth_percentile",
+          "weight": 20
+        },
+        {
+          "key": "absorption",
+          "label": "Absorption",
+          "source_field": "absorption_percentile",
+          "weight": 20
+        },
+        {
+          "key": "vacancy",
+          "label": "Vacancy",
+          "source_field": "vacancy_percentile_inverse",
+          "weight": 15
+        },
+        {
+          "key": "investment",
+          "label": "Investment",
+          "source_field": "capital_activity_score",
+          "weight": 10
+        },
+        {
+          "key": "construction",
+          "label": "Construction",
+          "source_field": "construction_percentile_inverse",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "key": "retail_growth",
+      "name": "Retail Growth",
+      "asset_class": "Retail",
+      "version": "1.0.0",
+      "components": [
+        {
+          "key": "employment",
+          "label": "Employment",
+          "source_field": "employment_growth_percentile",
+          "weight": 25
+        },
+        {
+          "key": "rent_growth",
+          "label": "Rent Growth",
+          "source_field": "rent_growth_percentile",
+          "weight": 20
+        },
+        {
+          "key": "absorption",
+          "label": "Absorption",
+          "source_field": "absorption_percentile",
+          "weight": 20
+        },
+        {
+          "key": "vacancy",
+          "label": "Vacancy",
+          "source_field": "vacancy_percentile_inverse",
+          "weight": 15
+        },
+        {
+          "key": "investment",
+          "label": "Investment",
+          "source_field": "capital_activity_score",
+          "weight": 10
+        },
+        {
+          "key": "construction",
+          "label": "Construction",
+          "source_field": "construction_percentile_inverse",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "key": "hotel_growth",
+      "name": "Hotel Growth",
+      "asset_class": "Hotel",
+      "version": "1.0.0",
+      "components": [
+        {
+          "key": "employment",
+          "label": "Employment",
+          "source_field": "employment_growth_percentile",
+          "weight": 25
+        },
+        {
+          "key": "rent_growth",
+          "label": "Rent Growth",
+          "source_field": "rent_growth_percentile",
+          "weight": 20
+        },
+        {
+          "key": "absorption",
+          "label": "Absorption",
+          "source_field": "absorption_percentile",
+          "weight": 20
+        },
+        {
+          "key": "vacancy",
+          "label": "Vacancy",
+          "source_field": "vacancy_percentile_inverse",
+          "weight": 15
+        },
+        {
+          "key": "investment",
+          "label": "Investment",
+          "source_field": "capital_activity_score",
+          "weight": 10
+        },
+        {
+          "key": "construction",
+          "label": "Construction",
+          "source_field": "construction_percentile_inverse",
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

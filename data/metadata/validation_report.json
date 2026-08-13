@@ -22,6 +22,16 @@
       "status": "valid"
     },
     {
+      "name": "signal_history",
+      "records": 1000,
+      "status": "valid"
+    },
+    {
+      "name": "latest_signals",
+      "records": 20,
+      "status": "valid"
+    },
+    {
       "name": "events",
       "records": 1000,
       "status": "valid"
@@ -44,6 +54,21 @@
     {
       "name": "market_rankings",
       "records": 40,
+      "status": "valid"
+    },
+    {
+      "name": "signal_rankings",
+      "records": 20,
+      "status": "valid"
+    },
+    {
+      "name": "signal_explanations",
+      "records": 20,
+      "status": "valid"
+    },
+    {
+      "name": "signal_configurations",
+      "records": 5,
       "status": "valid"
     }
   ]

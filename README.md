@@ -4,7 +4,7 @@ OpenCRE Terminal is an open-source, static-first commercial real estate intellig
 
 ## Current status
 
-Phases 1 through 3 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, and deterministic market analytics/rankings. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**.
+Phases 1 through 4 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, and configurable signals with complete score decompositions. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**.
 
 ## Local development
 
@@ -30,7 +30,7 @@ npm run typecheck
 npm run build
 ```
 
-See [docs/architecture.md](docs/architecture.md), [docs/analytics.md](docs/analytics.md), [docs/implementation-roadmap.md](docs/implementation-roadmap.md), and [TODO.md](TODO.md).
+See [docs/architecture.md](docs/architecture.md), [docs/analytics.md](docs/analytics.md), [docs/signals.md](docs/signals.md), [docs/implementation-roadmap.md](docs/implementation-roadmap.md), and [TODO.md](TODO.md).
 
 ## License and data
 

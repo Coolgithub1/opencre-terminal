@@ -24,9 +24,15 @@
 - [x] Generate top/bottom, momentum, demand, supply, rent, and investment rankings.
 - [x] Validate analytics/ranking outputs and document their methodology.
 
+## Phase 4 — Configurable signals (complete)
+
+- [x] Add versioned asset-class signal configurations with exact weight validation.
+- [x] Generate signal history, latest scores, classifications, rankings, and explanations.
+- [x] Expose every score's component values, weights, and weighted contributions.
+- [x] Add golden decomposition tests and audit documentation.
+
 ## Deferred phases
 
-- [ ] Phase 4: configurable signal engine and audit-ready decompositions.
 - [ ] Phase 5: interactive terminal charts and tables.
 - [ ] Phase 6: MapLibre and static geographic datasets.
 - [ ] Phase 7: RSS ingestion and deterministic event extraction.

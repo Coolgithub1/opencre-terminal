@@ -99,6 +99,49 @@ DATASET_SPECS = (
         "json",
     ),
     DatasetSpec(
+        "signal_history",
+        Path("signals/history.parquet"),
+        1_000,
+        frozenset(
+            {
+                "signal_id",
+                "signal_key",
+                "signal_name",
+                "signal_version",
+                "market_id",
+                "score",
+                "classification",
+                "employment_contribution",
+                "rent_growth_contribution",
+                "absorption_contribution",
+                "vacancy_contribution",
+                "investment_contribution",
+                "construction_contribution",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "parquet",
+    ),
+    DatasetSpec(
+        "latest_signals",
+        Path("signals/latest.json"),
+        20,
+        frozenset(
+            {
+                "signal_id",
+                "signal_key",
+                "signal_name",
+                "signal_version",
+                "market_id",
+                "score",
+                "classification",
+                "components",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "json",
+    ),
+    DatasetSpec(
         "events",
         Path("events/history.parquet"),
         1_000,

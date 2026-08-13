@@ -16,6 +16,16 @@ from pipelines.demo.generator import (
     generate_demo_frames,
 )
 from pipelines.schemas import DATASET_SPECS, validate_frame
+from pipelines.signals.config import DEFAULT_SIGNAL_DEFINITIONS, serialize_definitions
+from pipelines.signals.engine import (
+    SIGNAL_METHODOLOGY,
+    SIGNAL_SOURCE,
+    SIGNAL_SOURCE_URL,
+    build_signal_history,
+    build_signal_rankings,
+    latest_signal_records,
+    signal_explanations,
+)
 from pipelines.validation import validate_data_directory
 
 
@@ -43,7 +53,31 @@ def _dataset_index(config: PipelineConfig) -> dict[str, object]:
                 "last_updated": config.retrieved_at,
                 "record_count": 40,
                 "schema_version": "1.0.0",
-            }
+            },
+            {
+                "name": "signal_rankings",
+                "path": "signals/rankings.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": 20,
+                "schema_version": "1.0.0",
+            },
+            {
+                "name": "signal_explanations",
+                "path": "signals/explanations.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": 20,
+                "schema_version": "1.0.0",
+            },
+            {
+                "name": "signal_configurations",
+                "path": "metadata/signal_configs.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": len(DEFAULT_SIGNAL_DEFINITIONS),
+                "schema_version": "1.0.0",
+            },
         ],
     }
 
@@ -54,6 +88,9 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     market_analytics = build_market_analytics(frames.market_metrics, frames.events)
     latest_analytics = latest_market_analytics(market_analytics)
     rankings = build_rankings(latest_analytics)
+    signal_history = build_signal_history(market_analytics, DEFAULT_SIGNAL_DEFINITIONS)
+    latest_signals = latest_signal_records(signal_history, DEFAULT_SIGNAL_DEFINITIONS)
+    signal_rankings = build_signal_rankings(latest_signals)
     frame_by_name = {
         "markets": frames.markets,
         "market_metrics": frames.market_metrics,
@@ -63,6 +100,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
         "hotels": frames.hotels,
         "market_analytics": market_analytics,
         "latest_market_analytics": latest_analytics,
+        "signal_history": signal_history,
+        "latest_signals": latest_signals,
     }
     output_dir = config.output_dir
 
@@ -78,6 +117,21 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     events = frame_by_name["events"].sort("event_date", descending=True).head(20)
     write_json(output_dir / "events/latest.json", events.to_dicts())
     write_json(output_dir / "markets/rankings.json", rankings)
+    write_json(output_dir / "signals/rankings.json", signal_rankings)
+    write_json(
+        output_dir / "signals/explanations.json", signal_explanations(latest_signals.to_dicts())
+    )
+    write_json(
+        output_dir / "metadata/signal_configs.json",
+        {
+            "schema_version": "1.0.0",
+            "data_label": DEMO_LABEL,
+            "source": SIGNAL_SOURCE,
+            "source_url": SIGNAL_SOURCE_URL,
+            "methodology": SIGNAL_METHODOLOGY,
+            "configurations": serialize_definitions(DEFAULT_SIGNAL_DEFINITIONS),
+        },
+    )
     write_json(output_dir / "index.json", _dataset_index(config))
     write_json(
         output_dir / "metadata/sources.json",
@@ -101,6 +155,13 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                         "descriptive analytics."
                     ),
                 },
+                {
+                    "source": SIGNAL_SOURCE,
+                    "source_url": SIGNAL_SOURCE_URL,
+                    "license": "Derived only from OpenCRE synthetic demo data.",
+                    "update_frequency": "Generated on demand or in GitHub Actions.",
+                    "methodology": SIGNAL_METHODOLOGY,
+                },
             ],
         },
     )
@@ -119,7 +180,16 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                 {"name": spec.name, "records": spec.expected_rows, "status": "validated"}
                 for spec in DATASET_SPECS
             ]
-            + [{"name": "market_rankings", "records": 40, "status": "validated"}],
+            + [
+                {"name": "market_rankings", "records": 40, "status": "validated"},
+                {"name": "signal_rankings", "records": 20, "status": "validated"},
+                {"name": "signal_explanations", "records": 20, "status": "validated"},
+                {
+                    "name": "signal_configurations",
+                    "records": len(DEFAULT_SIGNAL_DEFINITIONS),
+                    "status": "validated",
+                },
+            ],
         },
     )
 

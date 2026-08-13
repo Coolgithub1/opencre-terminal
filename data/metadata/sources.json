@@ -14,6 +14,13 @@
       "license": "Derived only from OpenCRE synthetic demo data.",
       "update_frequency": "Generated on demand or in GitHub Actions.",
       "methodology": "Historical-percentile normalization and transparent weighted descriptive analytics."
+    },
+    {
+      "source": "OpenCRE deterministic market signal engine",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/signals.md",
+      "license": "Derived only from OpenCRE synthetic demo data.",
+      "update_frequency": "Generated on demand or in GitHub Actions.",
+      "methodology": "The signal is the sum of component score multiplied by explicit component weight. Each component is a 0–100 historical-percentile metric generated from synthetic data. Scores describe historical associations only and do not claim causation or predict performance."
     }
   ]
 }

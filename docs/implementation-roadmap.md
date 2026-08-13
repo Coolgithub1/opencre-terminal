@@ -5,7 +5,7 @@ The project is delivered in deliberately bounded phases to keep its static-first
 1. **Foundation:** Vite React TypeScript frontend, GitHub Pages, terminal UI, synthetic demo data.
 2. **Data foundation (complete):** Python 3.12-compatible pipelines, schemas, in-memory DuckDB/Parquet processing, generated demo datasets, validation, and CI.
 3. **Market analytics (complete):** historical-percentile normalization, auditable market-state metrics, and static rankings.
-4. **Signals:** weighted scores, validations, history, mathematical explanations.
+4. **Signals (complete):** versioned weighted scores, validation, history, classifications, rankings, and mathematical explanations.
 5. **Terminal analytics:** charts, tables, filtering, lazy data loading.
 6. **Geography:** static GeoJSON, MapLibre layers, market detail panels.
 7. **News events:** configurable RSS registry, deterministic event extraction, entity and geography resolution.

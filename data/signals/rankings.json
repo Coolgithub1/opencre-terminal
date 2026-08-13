@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0.0",
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "as_of_date": "2026-08-01",
+  "source": "OpenCRE deterministic market signal engine",
+  "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/signals.md",
+  "methodology": "The signal is the sum of component score multiplied by explicit component weight. Each component is a 0–100 historical-percentile metric generated from synthetic data. Scores describe historical associations only and do not claim causation or predict performance.",
+  "rankings": {
+    "top_signals": [
+      {
+        "rank": 1,
+        "market_id": "seattle-wa",
+        "market_name": "Seattle",
+        "asset_class": "Industrial",
+        "signal_name": "Industrial Growth",
+        "score": 76.5,
+        "classification": "Strong",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "chicago-il",
+        "market_name": "Chicago",
+        "asset_class": "Multifamily",
+        "signal_name": "Multifamily Growth",
+        "score": 69.6,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "orlando-fl",
+        "market_name": "Orlando",
+        "asset_class": "Hotel",
+        "signal_name": "Hotel Growth",
+        "score": 69.1,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "austin-tx",
+        "market_name": "Austin",
+        "asset_class": "Multifamily",
+        "signal_name": "Multifamily Growth",
+        "score": 64.1,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "nashville-tn",
+        "market_name": "Nashville",
+        "asset_class": "Office",
+        "signal_name": "Office Growth",
+        "score": 63.4,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 6,
+        "market_id": "charleston-sc",
+        "market_name": "Charleston",
+        "asset_class": "Industrial",
+        "signal_name": "Industrial Growth",
+        "score": 63.4,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 7,
+        "market_id": "san-antonio-tx",
+        "market_name": "San Antonio",
+        "asset_class": "Retail",
+        "signal_name": "Retail Growth",
+        "score": 62.2,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 8,
+        "market_id": "atlanta-ga",
+        "market_name": "Atlanta",
+        "asset_class": "Industrial",
+        "signal_name": "Industrial Growth",
+        "score": 59.2,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 9,
+        "market_id": "las-vegas-nv",
+        "market_name": "Las Vegas",
+        "asset_class": "Retail",
+        "signal_name": "Retail Growth",
+        "score": 58.8,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 10,
+        "market_id": "columbus-oh",
+        "market_name": "Columbus",
+        "asset_class": "Multifamily",
+        "signal_name": "Multifamily Growth",
+        "score": 58.0,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ],
+    "bottom_signals": [
+      {
+        "rank": 1,
+        "market_id": "phoenix-az",
+        "market_name": "Phoenix",
+        "asset_class": "Hotel",
+        "signal_name": "Hotel Growth",
+        "score": 39.4,
+        "classification": "Neutral",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 2,
+        "market_id": "charlotte-nc",
+        "market_name": "Charlotte",
+        "asset_class": "Multifamily",
+        "signal_name": "Multifamily Growth",
+        "score": 42.7,
+        "classification": "Neutral",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 3,
+        "market_id": "miami-fl",
+        "market_name": "Miami",
+        "asset_class": "Retail",
+        "signal_name": "Retail Growth",
+        "score": 44.7,
+        "classification": "Neutral",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 4,
+        "market_id": "tampa-fl",
+        "market_name": "Tampa",
+        "asset_class": "Office",
+        "signal_name": "Office Growth",
+        "score": 49.1,
+        "classification": "Neutral",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 5,
+        "market_id": "dallas-tx",
+        "market_name": "Dallas",
+        "asset_class": "Retail",
+        "signal_name": "Retail Growth",
+        "score": 52.4,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 6,
+        "market_id": "houston-tx",
+        "market_name": "Houston",
+        "asset_class": "Office",
+        "signal_name": "Office Growth",
+        "score": 53.8,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 7,
+        "market_id": "raleigh-nc",
+        "market_name": "Raleigh",
+        "asset_class": "Hotel",
+        "signal_name": "Hotel Growth",
+        "score": 54.0,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 8,
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "asset_class": "Office",
+        "signal_name": "Office Growth",
+        "score": 56.0,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 9,
+        "market_id": "minneapolis-mn",
+        "market_name": "Minneapolis",
+        "asset_class": "Hotel",
+        "signal_name": "Hotel Growth",
+        "score": 56.3,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      },
+      {
+        "rank": 10,
+        "market_id": "salt-lake-city-ut",
+        "market_name": "Salt Lake City",
+        "asset_class": "Industrial",
+        "signal_name": "Industrial Growth",
+        "score": 56.7,
+        "classification": "Emerging",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    ]
+  }
+}

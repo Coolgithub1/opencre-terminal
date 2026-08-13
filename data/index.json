@@ -36,6 +36,22 @@
       "schema_version": "1.0.0"
     },
     {
+      "name": "signal_history",
+      "path": "signals/history.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 1000,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "latest_signals",
+      "path": "signals/latest.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
+    },
+    {
       "name": "events",
       "path": "events/history.parquet",
       "format": "parquet",
@@ -73,6 +89,30 @@
       "format": "json",
       "last_updated": "2026-08-13T23:30:00Z",
       "record_count": 40,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "signal_rankings",
+      "path": "signals/rankings.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "signal_explanations",
+      "path": "signals/explanations.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "signal_configurations",
+      "path": "metadata/signal_configs.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 5,
       "schema_version": "1.0.0"
     }
   ]
