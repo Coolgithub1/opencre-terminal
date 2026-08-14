@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import extractedEvents from '../../public/data/v1/events/extracted.json'
 import signals from '../../public/data/v1/signals/latest.json'
 
 describe('published frontend data contract', () => {
@@ -7,5 +8,12 @@ describe('published frontend data contract', () => {
     expect(signals.every((signal) => signal.data_label.includes('DEMO DATA'))).toBe(true)
     expect(signals.every((signal) => signal.score >= 0 && signal.score <= 100)).toBe(true)
     expect(signals.every((signal) => signal.components.length === 6)).toBe(true)
+  })
+
+  it('contains traceable, deterministic RSS event records', () => {
+    expect(extractedEvents).toHaveLength(20)
+    expect(extractedEvents.every((event) => event.data_label.includes('DEMO DATA'))).toBe(true)
+    expect(extractedEvents.every((event) => event.confidence >= 0 && event.confidence <= 1)).toBe(true)
+    expect(extractedEvents.every((event) => event.article_id && event.market_id && event.company)).toBe(true)
   })
 })

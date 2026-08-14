@@ -28,6 +28,13 @@
       "license": "Static synthetic demo geography; no boundary claims are made.",
       "update_frequency": "Generated on demand or in GitHub Actions.",
       "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries."
+    },
+    {
+      "source": "OpenCRE synthetic RSS fixture",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/rss.md",
+      "license": "Synthetic metadata; no third-party article content.",
+      "update_frequency": "Generated on demand or in GitHub Actions.",
+      "methodology": "Deterministic synthetic RSS feed metadata used to test parsing, deduplication, entity resolution, market association, and rule-based event extraction. It is not reporting or an observation of real events. Rule-based extraction matches transparent event phrases, exact aliases, conservative fuzzy aliases, and configured market names. Ambiguous entity matches are discarded rather than merged."
     }
   ]
 }

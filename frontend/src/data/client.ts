@@ -56,6 +56,32 @@ export type EventRecord = {
   employment: number
 }
 
+export type RssArticle = {
+  article_id: string
+  title: string
+  publisher: string
+  url: string
+  published_at: string
+  description: string
+  category: string
+  feed_name: string
+  data_label: string
+}
+
+export type ExtractedEvent = EventRecord & {
+  article_id: string
+  market_id: string
+  amount_usd: number
+  confidence: number
+  entity_resolution: string
+  extraction_rules: string[]
+  article_title: string
+  publisher: string
+  url: string
+  published_at: string
+  data_label: string
+}
+
 export type PipelineStatus = {
   pipeline: string
   status: string
@@ -119,6 +145,8 @@ export const getSignalHistory = (marketId: string) => getJson<SignalHistoryPoint
 export const getSignalRankings = () => getJson<SignalRankings>('signals/rankings.json')
 export const getMarketAnalytics = () => getJson<MarketAnalytics[]>('markets/latest_analytics.json')
 export const getEvents = () => getJson<EventRecord[]>('events/latest.json')
+export const getRssArticles = () => getJson<RssArticle[]>('events/articles.json')
+export const getExtractedEvents = () => getJson<ExtractedEvent[]>('events/extracted.json')
 export const getPipelineStatus = () => getJson<PipelineStatus>('metadata/pipeline_status.json')
 export const getSources = () => getJson<SourceRegistry>('metadata/sources.json')
 export const getDatasetIndex = () => getJson<DatasetIndex>('index.json')

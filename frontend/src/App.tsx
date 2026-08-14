@@ -1,19 +1,20 @@
 import { useState } from 'react'
 import { DashboardPage } from './pages/DashboardPage'
 import { DataSourcesPage } from './pages/DataSourcesPage'
+import { EventsPage } from './pages/EventsPage'
 import { MarketsPage } from './pages/MarketsPage'
 import { MapPage } from './pages/MapPage'
 import { SignalsPage } from './pages/SignalsPage'
 import './styles.css'
 
-type Page = 'dashboard' | 'markets' | 'signals' | 'map' | 'data-sources'
+type Page = 'dashboard' | 'markets' | 'signals' | 'map' | 'events' | 'data-sources'
 
 const navigation: Array<{ label: string; page?: Page; phase?: string }> = [
   { label: 'Dashboard', page: 'dashboard' },
   { label: 'Markets', page: 'markets' },
   { label: 'Signals', page: 'signals' },
   { label: 'Map', page: 'map' },
-  { label: 'Events', phase: 'Phase 7' },
+  { label: 'Events', page: 'events' },
   { label: 'Hotels', phase: 'Phase 10' },
   { label: 'Valuation', phase: 'Phase 11' },
   { label: 'Backtesting', phase: 'Phase 9' },
@@ -42,6 +43,7 @@ function App() {
       {page === 'markets' && <MarketsPage onInspectSignal={inspectSignal} />}
       {page === 'signals' && <SignalsPage initialMarketId={selectedMarketId} />}
       {page === 'map' && <MapPage onInspectSignal={inspectSignal} />}
+      {page === 'events' && <EventsPage />}
       {page === 'data-sources' && <DataSourcesPage />}
     </section>
   </main>

@@ -9,6 +9,7 @@ The browser data layer in `frontend/src/data/client.ts` is the only frontend pat
 - The dashboard loads only compact current signal rankings, current signals, recent events, and pipeline health.
 - Markets loads the 20-record current analytics dataset.
 - Signals loads 20 current scores first, then fetches exactly one 50-record file from `signals/history/{market_id}.json` after a market is selected.
+- Events lazily loads the 20-record `events/extracted.json` rule output and matching 20-record `events/articles.json` feed metadata only when its page is opened.
 - Historical Parquet files remain published for pipeline and future analytical use, but the browser does not download them for its interactive chart.
 
 This preserves the static-first design while avoiding a startup download of all historical observations.

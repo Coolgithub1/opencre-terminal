@@ -171,4 +171,44 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
             )
     records.append({"name": "market_geography", "records": 20, "status": "valid"})
 
+    rss_articles_path = data_dir / "events/articles.json"
+    extracted_events_path = data_dir / "events/extracted.json"
+    expected_rss_paths = {"events/articles.json", "events/extracted.json"}
+    if not expected_rss_paths.issubset(indexed_paths):
+        raise DataValidationError("RSS outputs are absent from data/index.json")
+    if not rss_articles_path.exists() or not extracted_events_path.exists():
+        raise DataValidationError("RSS article or extracted-event output is missing")
+    rss_articles = _json_rows(rss_articles_path)
+    extracted_events = _json_rows(extracted_events_path)
+    if len(rss_articles) != 20 or len(extracted_events) != 20:
+        raise DataValidationError("expected 20 RSS articles and 20 extracted events")
+    if len({article.get("url") for article in rss_articles}) != 20:
+        raise DataValidationError("RSS article URLs must be unique after deduplication")
+    article_ids = {article.get("article_id") for article in rss_articles}
+    required_event_fields = {
+        "event_id",
+        "article_id",
+        "event_type",
+        "company",
+        "market_id",
+        "location",
+        "event_date",
+        "confidence",
+        *PROVENANCE_COLUMNS,
+    }
+    for event in extracted_events:
+        if not required_event_fields.issubset(event):
+            raise DataValidationError("RSS extracted events are missing required fields")
+        if event.get("article_id") not in article_ids:
+            raise DataValidationError("RSS event references an unknown article")
+        confidence = event.get("confidence")
+        if not isinstance(confidence, (float, int)) or not 0 <= confidence <= 1:
+            raise DataValidationError("RSS event confidence must be between zero and one")
+    records.extend(
+        [
+            {"name": "rss_articles", "records": 20, "status": "valid"},
+            {"name": "extracted_events", "records": 20, "status": "valid"},
+        ]
+    )
+
     return {"status": "healthy", "datasets": records}

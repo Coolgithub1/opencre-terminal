@@ -45,9 +45,15 @@
 - [x] Add browser-only MapLibre signal points, asset-class filtering, market details, and a signal handoff.
 - [x] Document that the geometry is representative city-centroid points, not boundaries.
 
+## Phase 7 - RSS ingestion and deterministic event extraction (complete)
+
+- [x] Add a reviewed RSS registry, metadata-only parser, URL deduplication, and scheduled Action artifact.
+- [x] Generate 20 deterministic synthetic feed records and matching market-associated events for the static bundle.
+- [x] Add exact and conservative fuzzy entity resolution, transparent event phrases, confidence, and provenance.
+- [x] Add a terminal Events view with filters, source links, and extraction detail.
+
 ## Deferred phases
 
-- [ ] Phase 7: RSS ingestion and deterministic event extraction.
 - [ ] Phase 8: public economic-data connectors.
 - [ ] Phase 9: deterministic backtesting.
 - [ ] Phase 10: client-side hotel spreadsheet parsing and validation.

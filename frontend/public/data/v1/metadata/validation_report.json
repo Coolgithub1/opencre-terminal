@@ -80,6 +80,16 @@
       "name": "market_geography",
       "records": 20,
       "status": "valid"
+    },
+    {
+      "name": "rss_articles",
+      "records": 20,
+      "status": "valid"
+    },
+    {
+      "name": "extracted_events",
+      "records": 20,
+      "status": "valid"
     }
   ]
 }

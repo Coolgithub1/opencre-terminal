@@ -130,6 +130,22 @@
       "last_updated": "2026-08-13T23:30:00Z",
       "record_count": 20,
       "schema_version": "1.0.0"
+    },
+    {
+      "name": "rss_articles",
+      "path": "events/articles.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "extracted_events",
+      "path": "events/extracted.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
     }
   ]
 }

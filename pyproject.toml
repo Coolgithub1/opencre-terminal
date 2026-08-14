@@ -4,16 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "opencre-terminal"
-version = "0.6.0"
+version = "0.7.0"
 description = "Static-first, deterministic commercial real estate intelligence terminal"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "Apache-2.0" }
 dependencies = [
   "duckdb>=1.2,<2",
+  "feedparser>=6.0,<7",
+  "httpx>=0.28,<1",
   "numpy>=2.0,<3",
   "polars>=1.0,<2",
   "pyarrow>=19,<24",
+  "rapidfuzz>=3.0,<4",
 ]
 
 [tool.pytest.ini_options]

@@ -22,6 +22,14 @@ from pipelines.geography.markets import (
     GEOGRAPHY_SOURCE_URL,
     build_market_geojson,
 )
+from pipelines.rss.demo import (
+    RSS_DEMO_METHODOLOGY,
+    RSS_DEMO_SOURCE,
+    RSS_DEMO_SOURCE_URL,
+    build_demo_articles,
+    market_references,
+)
+from pipelines.rss.events import EVENT_METHODOLOGY, extract_events
 from pipelines.schemas import DATASET_SPECS, validate_frame
 from pipelines.signals.config import DEFAULT_SIGNAL_DEFINITIONS, serialize_definitions
 from pipelines.signals.engine import (
@@ -101,6 +109,22 @@ def _dataset_index(config: PipelineConfig) -> dict[str, object]:
                 "record_count": 20,
                 "schema_version": "1.0.0",
             },
+            {
+                "name": "rss_articles",
+                "path": "events/articles.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": 20,
+                "schema_version": "1.0.0",
+            },
+            {
+                "name": "extracted_events",
+                "path": "events/extracted.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": 20,
+                "schema_version": "1.0.0",
+            },
         ],
     }
 
@@ -115,6 +139,10 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     latest_signals = latest_signal_records(signal_history, DEFAULT_SIGNAL_DEFINITIONS)
     signal_rankings = build_signal_rankings(latest_signals)
     market_geojson = build_market_geojson(frames.markets.to_dicts(), config)
+    rss_articles = build_demo_articles(frames.markets.to_dicts(), config)
+    rss_events = extract_events(rss_articles, market_references(frames.markets.to_dicts()))
+    if len(rss_events) != 20:
+        raise ValueError("RSS demo fixture must resolve to 20 deterministic events")
     frame_by_name = {
         "markets": frames.markets,
         "market_metrics": frames.market_metrics,
@@ -138,8 +166,9 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
         else:
             write_parquet(output_path, frame.to_arrow())
 
-    events = frame_by_name["events"].sort("event_date", descending=True).head(20)
-    write_json(output_dir / "events/latest.json", events.to_dicts())
+    write_json(output_dir / "events/articles.json", [article.to_dict() for article in rss_articles])
+    write_json(output_dir / "events/extracted.json", rss_events)
+    write_json(output_dir / "events/latest.json", rss_events)
     write_json(output_dir / "markets/rankings.json", rankings)
     write_json(output_dir / "geography/markets.geojson", market_geojson)
     write_json(output_dir / "signals/rankings.json", signal_rankings)
@@ -196,6 +225,13 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                     "update_frequency": "Generated on demand or in GitHub Actions.",
                     "methodology": GEOGRAPHY_METHODOLOGY,
                 },
+                {
+                    "source": RSS_DEMO_SOURCE,
+                    "source_url": RSS_DEMO_SOURCE_URL,
+                    "license": "Synthetic metadata; no third-party article content.",
+                    "update_frequency": "Generated on demand or in GitHub Actions.",
+                    "methodology": f"{RSS_DEMO_METHODOLOGY} {EVENT_METHODOLOGY}",
+                },
             ],
         },
     )
@@ -225,6 +261,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                 },
                 {"name": "signal_history_by_market", "records": 1_000, "status": "validated"},
                 {"name": "market_geography", "records": 20, "status": "validated"},
+                {"name": "rss_articles", "records": 20, "status": "validated"},
+                {"name": "extracted_events", "records": 20, "status": "validated"},
             ],
         },
     )

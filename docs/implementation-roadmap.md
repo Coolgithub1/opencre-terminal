@@ -8,7 +8,7 @@ The project is delivered in deliberately bounded phases to keep its static-first
 4. **Signals (complete):** versioned weighted scores, validation, history, classifications, rankings, and mathematical explanations.
 5. **Terminal analytics (complete):** static Pages data publication, interactive charts, compact tables, filtering, decomposition panels, and lazy history loading.
 6. **Geography (complete):** static GeoJSON, MapLibre layers, market detail panels, and a representative-city-centroid disclaimer.
-7. **News events:** configurable RSS registry, deterministic event extraction, entity and geography resolution.
+7. **News events (complete):** configurable RSS registry, metadata-only parsing and deduplication, deterministic event extraction, conservative entity resolution, and market association.
 8. **Public economics:** credential-aware BLS, Census, FRED, and SEC connectors.
 9. **Backtesting:** deterministic historical-association analysis.
 10. **Hotel ingest:** browser-only workbook parsing, mapping, and validation.

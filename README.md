@@ -4,11 +4,15 @@ OpenCRE Terminal is an open-source, static-first commercial real estate intellig
 
 ## Current status
 
-Phases 1 through 6 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, configurable signals with complete score decompositions, interactive terminal charts/tables, and a MapLibre market-signal map. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**. Map points are representative city centroids, not market or administrative boundaries.
+Phases 1 through 7 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, configurable signals with complete score decompositions, interactive terminal charts/tables, a MapLibre market-signal map, and rule-based RSS event extraction. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**. Map points are representative city centroids, not market or administrative boundaries.
 
 ## Phase 6: static geography
 
 Phase 6 adds an on-demand MapLibre signal view backed by a versioned 20-feature GeoJSON collection. These are representative city-centroid points for synthetic demo markets, not market, MSA, property, or administrative boundaries. The terminal map uses an empty local style and no map tiles, token, mapping API, spatial database, or application server.
+
+## Phase 7: RSS events
+
+Phase 7 adds a configurable publisher RSS registry, metadata-only parser, deterministic URL deduplication, conservative entity and market resolution, and transparent event rules. The terminal publishes a synthetic fixture so builds remain reproducible. The scheduled workflow separately fetches the configured public feed registry into a short-lived Actions artifact; it never fetches article pages, republishes full article text, or exposes secrets.
 
 ## Local development
 
@@ -34,7 +38,7 @@ npm run typecheck
 npm run build
 ```
 
-See [docs/architecture.md](docs/architecture.md), [docs/frontend-data.md](docs/frontend-data.md), [docs/analytics.md](docs/analytics.md), [docs/signals.md](docs/signals.md), [docs/implementation-roadmap.md](docs/implementation-roadmap.md), and [TODO.md](TODO.md).
+See [docs/architecture.md](docs/architecture.md), [docs/frontend-data.md](docs/frontend-data.md), [docs/analytics.md](docs/analytics.md), [docs/signals.md](docs/signals.md), [docs/geography.md](docs/geography.md), [docs/rss.md](docs/rss.md), [docs/implementation-roadmap.md](docs/implementation-roadmap.md), and [TODO.md](TODO.md).
 
 ## License and data
 

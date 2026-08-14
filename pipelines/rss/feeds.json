@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Federal Reserve Board Press Releases",
+    "publisher": "Federal Reserve Board",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "category": "Finance",
+    "active": true,
+    "license": "Public Federal Reserve RSS metadata; retain publisher attribution and source URL.",
+    "source_policy_url": "https://www.federalreserve.gov/feeds/feeds.htm"
+  }
+]
