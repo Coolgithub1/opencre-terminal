@@ -15,6 +15,7 @@ from pipelines.demo.generator import (
     SOURCE_URL,
     generate_demo_frames,
 )
+from pipelines.frontend import publish_frontend_datasets
 from pipelines.schemas import DATASET_SPECS, validate_frame
 from pipelines.signals.config import DEFAULT_SIGNAL_DEFINITIONS, serialize_definitions
 from pipelines.signals.engine import (
@@ -78,6 +79,14 @@ def _dataset_index(config: PipelineConfig) -> dict[str, object]:
                 "record_count": len(DEFAULT_SIGNAL_DEFINITIONS),
                 "schema_version": "1.0.0",
             },
+            {
+                "name": "signal_history_by_market",
+                "path": "signals/history/{market_id}.json",
+                "format": "json",
+                "last_updated": config.retrieved_at,
+                "record_count": 1_000,
+                "schema_version": "1.0.0",
+            },
         ],
     }
 
@@ -121,6 +130,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     write_json(
         output_dir / "signals/explanations.json", signal_explanations(latest_signals.to_dicts())
     )
+    for market_id, history in signal_history.group_by("market_id", maintain_order=True):
+        write_json(output_dir / f"signals/history/{market_id[0]}.json", history.to_dicts())
     write_json(
         output_dir / "metadata/signal_configs.json",
         {
@@ -189,15 +200,22 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                     "records": len(DEFAULT_SIGNAL_DEFINITIONS),
                     "status": "validated",
                 },
+                {"name": "signal_history_by_market", "records": 1_000, "status": "validated"},
             ],
         },
     )
 
     report = validate_data_directory(output_dir)
     write_json(output_dir / "metadata/validation_report.json", report)
+    if config.frontend_output_dir is not None:
+        publish_frontend_datasets(output_dir, config.frontend_output_dir)
     return report
 
 
 def default_config(output_dir: Path | None = None) -> PipelineConfig:
     """Return the standard reproducible configuration, optionally targeting another directory."""
-    return PipelineConfig() if output_dir is None else PipelineConfig(output_dir=output_dir)
+    return (
+        PipelineConfig()
+        if output_dir is None
+        else PipelineConfig(output_dir=output_dir, frontend_output_dir=None)
+    )

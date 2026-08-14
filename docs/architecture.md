@@ -12,10 +12,10 @@ Phases 1 through 4 contain the frontend foundation, a deterministic synthetic-da
 
 ## Frontend data contract
 
-The frontend obtains data only through `src/data/client.ts`. Dataset paths are resolved relative to the Vite base path so local development and GitHub Pages use the same contract. Phase 1 ships `public/data/v1/dashboard.json`, whose records contain a `data_label` field identifying them as synthetic demo data.
+The frontend obtains data only through `src/data/client.ts`. Dataset paths are resolved relative to the Vite base path so local development and GitHub Pages use the same contract. Each default pipeline run copies generated `data/` files to `frontend/public/data/v1/` before the Vite build. The dashboard uses compact current datasets, while a signal chart fetches only the selected market's 50-record history file. Every record carries a `data_label` identifying it as synthetic demo data.
 
 ## Deployment
 
-The Pages workflow installs frontend dependencies, runs type checking and a production build, uploads `frontend/dist`, and deploys it with the minimum Pages permissions. Repository content writes are not required by the Phase 1 deployment workflow.
+The Pages workflow runs the deterministic Python pipeline, installs frontend dependencies, runs type checking and a production build, uploads `frontend/dist`, and deploys it with the minimum Pages permissions. Repository content writes are not required by the deployment workflow.
 
 The `data-validation` workflow runs the Phase 2 generator and validator in an ephemeral GitHub Actions environment. It has read-only repository access and produces no persistent service or secret-dependent output.

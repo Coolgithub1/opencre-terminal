@@ -230,7 +230,7 @@ def generate_demo_frames(config: PipelineConfig) -> DemoFrames:
         for event_index in range(50):
             event_number = market_index * 50 + event_index + 1
             event_date = date(
-                2024 + (event_index % 3), (event_index % 12) + 1, (event_index % 27) + 1
+                2023 + (event_index % 3), (event_index % 12) + 1, (event_index % 27) + 1
             )
             event_type = EVENT_TYPES[(market_index + event_index) % len(EVENT_TYPES)]
             event_rows.append(

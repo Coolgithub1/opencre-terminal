@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import dashboard from '../../public/data/v1/dashboard.json'
+import signals from '../../public/data/v1/signals/latest.json'
 
-describe('dashboard dataset contract', () => {
-  it('uses the required synthetic-data label', () => {
-    expect(dashboard.data_label).toContain('DEMO DATA')
-    expect(dashboard.data_label).toContain('synthetic')
-    expect(dashboard.signals).toHaveLength(5)
-    expect(dashboard.signals.every((signal) => signal.score >= 0 && signal.score <= 100)).toBe(true)
+describe('published frontend data contract', () => {
+  it('contains current synthetic signals with auditable components', () => {
+    expect(signals).toHaveLength(20)
+    expect(signals.every((signal) => signal.data_label.includes('DEMO DATA'))).toBe(true)
+    expect(signals.every((signal) => signal.score >= 0 && signal.score <= 100)).toBe(true)
+    expect(signals.every((signal) => signal.components.length === 6)).toBe(true)
   })
 })

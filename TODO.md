@@ -31,9 +31,15 @@
 - [x] Expose every score's component values, weights, and weighted contributions.
 - [x] Add golden decomposition tests and audit documentation.
 
+## Phase 5 — Interactive terminal (complete)
+
+- [x] Publish generated data into the versioned GitHub Pages frontend bundle.
+- [x] Replace hardcoded dashboard data with centralized static dataset access.
+- [x] Add interactive dashboard, market table, signal filters, score decomposition, and lazy history chart.
+- [x] Add data-source catalogue and verify the browser loading strategy.
+
 ## Deferred phases
 
-- [ ] Phase 5: interactive terminal charts and tables.
 - [ ] Phase 6: MapLibre and static geographic datasets.
 - [ ] Phase 7: RSS ingestion and deterministic event extraction.
 - [ ] Phase 8: public economic-data connectors.

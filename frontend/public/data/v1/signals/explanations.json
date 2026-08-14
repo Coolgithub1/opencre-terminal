@@ -1,0 +1,1162 @@
+[
+  {
+    "signal_id": "atlanta-ga:industrial_growth:2026-08-01",
+    "market_name": "Atlanta",
+    "signal_name": "Industrial Growth",
+    "score": 59.2,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 92.0,
+        "weight": 25,
+        "contribution": 23.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 46.0,
+        "weight": 20,
+        "contribution": 9.2
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 100.0,
+        "weight": 20,
+        "contribution": 20.0
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 12.0,
+        "weight": 15,
+        "contribution": 1.8
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 38.0,
+        "weight": 10,
+        "contribution": 3.8
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 14.0,
+        "weight": 10,
+        "contribution": 1.4
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "austin-tx:multifamily_growth:2026-08-01",
+    "market_name": "Austin",
+    "signal_name": "Multifamily Growth",
+    "score": 64.1,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 72.0,
+        "weight": 25,
+        "contribution": 18.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 86.0,
+        "weight": 20,
+        "contribution": 17.2
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 100.0,
+        "weight": 20,
+        "contribution": 20.0
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 22.0,
+        "weight": 15,
+        "contribution": 3.3
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 56.0,
+        "weight": 10,
+        "contribution": 5.6
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 0.0,
+        "weight": 10,
+        "contribution": 0.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "charleston-sc:industrial_growth:2026-08-01",
+    "market_name": "Charleston",
+    "signal_name": "Industrial Growth",
+    "score": 63.4,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 68.0,
+        "weight": 25,
+        "contribution": 17.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 96.0,
+        "weight": 20,
+        "contribution": 19.2
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 64.0,
+        "weight": 20,
+        "contribution": 12.8
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 32.0,
+        "weight": 15,
+        "contribution": 4.8
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 82.0,
+        "weight": 10,
+        "contribution": 8.2
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 14.0,
+        "weight": 10,
+        "contribution": 1.4
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "charlotte-nc:multifamily_growth:2026-08-01",
+    "market_name": "Charlotte",
+    "signal_name": "Multifamily Growth",
+    "score": 42.7,
+    "classification": "Neutral",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 70.0,
+        "weight": 25,
+        "contribution": 17.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 70.0,
+        "weight": 20,
+        "contribution": 14.0
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 6.0,
+        "weight": 20,
+        "contribution": 1.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 44.0,
+        "weight": 15,
+        "contribution": 6.6
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 20.0,
+        "weight": 10,
+        "contribution": 2.0
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 14.0,
+        "weight": 10,
+        "contribution": 1.4
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "chicago-il:multifamily_growth:2026-08-01",
+    "market_name": "Chicago",
+    "signal_name": "Multifamily Growth",
+    "score": 69.6,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 64.0,
+        "weight": 25,
+        "contribution": 16.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 90.0,
+        "weight": 20,
+        "contribution": 18.0
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 86.0,
+        "weight": 20,
+        "contribution": 17.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 88.0,
+        "weight": 15,
+        "contribution": 13.2
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 32.0,
+        "weight": 10,
+        "contribution": 3.2
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 20.0,
+        "weight": 10,
+        "contribution": 2.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "columbus-oh:multifamily_growth:2026-08-01",
+    "market_name": "Columbus",
+    "signal_name": "Multifamily Growth",
+    "score": 58.0,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 88.0,
+        "weight": 25,
+        "contribution": 22.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 80.0,
+        "weight": 20,
+        "contribution": 16.0
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 18.0,
+        "weight": 20,
+        "contribution": 3.6
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 12.0,
+        "weight": 15,
+        "contribution": 1.8
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 56.0,
+        "weight": 10,
+        "contribution": 5.6
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 90.0,
+        "weight": 10,
+        "contribution": 9.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "dallas-tx:retail_growth:2026-08-01",
+    "market_name": "Dallas",
+    "signal_name": "Retail Growth",
+    "score": 52.4,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 74.0,
+        "weight": 25,
+        "contribution": 18.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 58.0,
+        "weight": 20,
+        "contribution": 11.6
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 64.0,
+        "weight": 20,
+        "contribution": 12.8
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 30.0,
+        "weight": 15,
+        "contribution": 4.5
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 16.0,
+        "weight": 10,
+        "contribution": 1.6
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 34.0,
+        "weight": 10,
+        "contribution": 3.4
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "denver-co:office_growth:2026-08-01",
+    "market_name": "Denver",
+    "signal_name": "Office Growth",
+    "score": 56.0,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 80.0,
+        "weight": 25,
+        "contribution": 20.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 98.0,
+        "weight": 20,
+        "contribution": 19.6
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 26.0,
+        "weight": 20,
+        "contribution": 5.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 0.0,
+        "weight": 15,
+        "contribution": 0.0
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 82.0,
+        "weight": 10,
+        "contribution": 8.2
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 30.0,
+        "weight": 10,
+        "contribution": 3.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "houston-tx:office_growth:2026-08-01",
+    "market_name": "Houston",
+    "signal_name": "Office Growth",
+    "score": 53.8,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 78.0,
+        "weight": 25,
+        "contribution": 19.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 74.0,
+        "weight": 20,
+        "contribution": 14.8
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 36.0,
+        "weight": 20,
+        "contribution": 7.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 14.0,
+        "weight": 15,
+        "contribution": 2.1
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 72.0,
+        "weight": 10,
+        "contribution": 7.2
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 30.0,
+        "weight": 10,
+        "contribution": 3.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "las-vegas-nv:retail_growth:2026-08-01",
+    "market_name": "Las Vegas",
+    "signal_name": "Retail Growth",
+    "score": 58.8,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 88.0,
+        "weight": 25,
+        "contribution": 22.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 72.0,
+        "weight": 20,
+        "contribution": 14.4
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 48.0,
+        "weight": 20,
+        "contribution": 9.6
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 40.0,
+        "weight": 15,
+        "contribution": 6.0
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 38.0,
+        "weight": 10,
+        "contribution": 3.8
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 30.0,
+        "weight": 10,
+        "contribution": 3.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "miami-fl:retail_growth:2026-08-01",
+    "market_name": "Miami",
+    "signal_name": "Retail Growth",
+    "score": 44.7,
+    "classification": "Neutral",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 56.0,
+        "weight": 25,
+        "contribution": 14.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 96.0,
+        "weight": 20,
+        "contribution": 19.2
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 6.0,
+        "weight": 20,
+        "contribution": 1.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 54.0,
+        "weight": 15,
+        "contribution": 8.1
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 18.0,
+        "weight": 10,
+        "contribution": 1.8
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 4.0,
+        "weight": 10,
+        "contribution": 0.4
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "minneapolis-mn:hotel_growth:2026-08-01",
+    "market_name": "Minneapolis",
+    "signal_name": "Hotel Growth",
+    "score": 56.3,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 88.0,
+        "weight": 25,
+        "contribution": 22.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 84.0,
+        "weight": 20,
+        "contribution": 16.8
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 14.0,
+        "weight": 20,
+        "contribution": 2.8
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 30.0,
+        "weight": 15,
+        "contribution": 4.5
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 76.0,
+        "weight": 10,
+        "contribution": 7.6
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 26.0,
+        "weight": 10,
+        "contribution": 2.6
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "nashville-tn:office_growth:2026-08-01",
+    "market_name": "Nashville",
+    "signal_name": "Office Growth",
+    "score": 63.4,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 80.0,
+        "weight": 25,
+        "contribution": 20.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 94.0,
+        "weight": 20,
+        "contribution": 18.8
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 48.0,
+        "weight": 20,
+        "contribution": 9.6
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 20.0,
+        "weight": 15,
+        "contribution": 3.0
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 28.0,
+        "weight": 10,
+        "contribution": 2.8
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 92.0,
+        "weight": 10,
+        "contribution": 9.2
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "orlando-fl:hotel_growth:2026-08-01",
+    "market_name": "Orlando",
+    "signal_name": "Hotel Growth",
+    "score": 69.1,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 66.0,
+        "weight": 25,
+        "contribution": 16.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 64.0,
+        "weight": 20,
+        "contribution": 12.8
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 92.0,
+        "weight": 20,
+        "contribution": 18.4
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 40.0,
+        "weight": 15,
+        "contribution": 6.0
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 84.0,
+        "weight": 10,
+        "contribution": 8.4
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 70.0,
+        "weight": 10,
+        "contribution": 7.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "phoenix-az:hotel_growth:2026-08-01",
+    "market_name": "Phoenix",
+    "signal_name": "Hotel Growth",
+    "score": 39.4,
+    "classification": "Neutral",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 38.0,
+        "weight": 25,
+        "contribution": 9.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 70.0,
+        "weight": 20,
+        "contribution": 14.0
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 14.0,
+        "weight": 20,
+        "contribution": 2.8
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 18.0,
+        "weight": 15,
+        "contribution": 2.7
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 94.0,
+        "weight": 10,
+        "contribution": 9.4
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 10.0,
+        "weight": 10,
+        "contribution": 1.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "raleigh-nc:hotel_growth:2026-08-01",
+    "market_name": "Raleigh",
+    "signal_name": "Hotel Growth",
+    "score": 54.0,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 52.0,
+        "weight": 25,
+        "contribution": 13.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 82.0,
+        "weight": 20,
+        "contribution": 16.4
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 46.0,
+        "weight": 20,
+        "contribution": 9.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 44.0,
+        "weight": 15,
+        "contribution": 6.6
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 88.0,
+        "weight": 10,
+        "contribution": 8.8
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 0.0,
+        "weight": 10,
+        "contribution": 0.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "salt-lake-city-ut:industrial_growth:2026-08-01",
+    "market_name": "Salt Lake City",
+    "signal_name": "Industrial Growth",
+    "score": 56.7,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 68.0,
+        "weight": 25,
+        "contribution": 17.0
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 98.0,
+        "weight": 20,
+        "contribution": 19.6
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 48.0,
+        "weight": 20,
+        "contribution": 9.6
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 22.0,
+        "weight": 15,
+        "contribution": 3.3
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 50.0,
+        "weight": 10,
+        "contribution": 5.0
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 22.0,
+        "weight": 10,
+        "contribution": 2.2
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "san-antonio-tx:retail_growth:2026-08-01",
+    "market_name": "San Antonio",
+    "signal_name": "Retail Growth",
+    "score": 62.2,
+    "classification": "Emerging",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 58.0,
+        "weight": 25,
+        "contribution": 14.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 88.0,
+        "weight": 20,
+        "contribution": 17.6
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 62.0,
+        "weight": 20,
+        "contribution": 12.4
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 54.0,
+        "weight": 15,
+        "contribution": 8.1
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 64.0,
+        "weight": 10,
+        "contribution": 6.4
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 32.0,
+        "weight": 10,
+        "contribution": 3.2
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "seattle-wa:industrial_growth:2026-08-01",
+    "market_name": "Seattle",
+    "signal_name": "Industrial Growth",
+    "score": 76.5,
+    "classification": "Strong",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 74.0,
+        "weight": 25,
+        "contribution": 18.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 84.0,
+        "weight": 20,
+        "contribution": 16.8
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 66.0,
+        "weight": 20,
+        "contribution": 13.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 76.0,
+        "weight": 15,
+        "contribution": 11.4
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 86.0,
+        "weight": 10,
+        "contribution": 8.6
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 80.0,
+        "weight": 10,
+        "contribution": 8.0
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  },
+  {
+    "signal_id": "tampa-fl:office_growth:2026-08-01",
+    "market_name": "Tampa",
+    "signal_name": "Office Growth",
+    "score": 49.1,
+    "classification": "Neutral",
+    "components": [
+      {
+        "key": "employment",
+        "label": "Employment",
+        "source_field": "employment_growth_percentile",
+        "score": 50.0,
+        "weight": 25,
+        "contribution": 12.5
+      },
+      {
+        "key": "rent_growth",
+        "label": "Rent Growth",
+        "source_field": "rent_growth_percentile",
+        "score": 64.0,
+        "weight": 20,
+        "contribution": 12.8
+      },
+      {
+        "key": "absorption",
+        "label": "Absorption",
+        "source_field": "absorption_percentile",
+        "score": 16.0,
+        "weight": 20,
+        "contribution": 3.2
+      },
+      {
+        "key": "vacancy",
+        "label": "Vacancy",
+        "source_field": "vacancy_percentile_inverse",
+        "score": 40.0,
+        "weight": 15,
+        "contribution": 6.0
+      },
+      {
+        "key": "investment",
+        "label": "Investment",
+        "source_field": "capital_activity_score",
+        "score": 70.0,
+        "weight": 10,
+        "contribution": 7.0
+      },
+      {
+        "key": "construction",
+        "label": "Construction",
+        "source_field": "construction_percentile_inverse",
+        "score": 76.0,
+        "weight": 10,
+        "contribution": 7.6
+      }
+    ],
+    "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+  }
+]

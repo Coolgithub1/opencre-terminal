@@ -9,7 +9,7 @@ from pipelines.validation import DataValidationError, validate_data_directory
 
 def test_validator_rejects_an_incomplete_dataset_index(tmp_path):
     data_dir = tmp_path / "data"
-    run_demo_pipeline(PipelineConfig(output_dir=data_dir))
+    run_demo_pipeline(PipelineConfig(output_dir=data_dir, frontend_output_dir=None))
     index_path = data_dir / "index.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     index["datasets"] = index["datasets"][1:]

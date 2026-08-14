@@ -127,6 +127,14 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
         raise DataValidationError(
             "signal configuration count does not match the registered definitions"
         )
+    signal_history_directory = data_dir / "signals/history"
+    history_files = sorted(signal_history_directory.glob("*.json"))
+    if len(history_files) != 20:
+        raise DataValidationError("expected one signal-history JSON file for each of 20 markets")
+    if any(len(_json_rows(path)) != 50 for path in history_files):
+        raise DataValidationError(
+            "each market signal-history JSON file must contain 50 observations"
+        )
     records.extend(
         [
             {"name": "signal_rankings", "records": 20, "status": "valid"},
@@ -136,6 +144,7 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
                 "records": len(DEFAULT_SIGNAL_DEFINITIONS),
                 "status": "valid",
             },
+            {"name": "signal_history_by_market", "records": 1_000, "status": "valid"},
         ]
     )
 

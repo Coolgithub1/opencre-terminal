@@ -20,4 +20,4 @@ python scripts/validate_data.py
 - `data/index.json` — versioned file catalogue with path, timestamp, count, and schema version.
 - `data/metadata/` — sources, update timestamp, validation report, and pipeline health.
 
-Phase 3 derives static analytics and rankings from the market and event history; see [analytics.md](analytics.md). The frontend will add interactive analytics views in Phase 5 without introducing a server dependency.
+Phase 3 derives static analytics and rankings from the market and event history; see [analytics.md](analytics.md). Phase 5 publishes the versioned generated data bundle to GitHub Pages and provides interactive analytics views without introducing a server dependency; see [frontend-data.md](frontend-data.md).
