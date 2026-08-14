@@ -18,7 +18,9 @@ def test_pipeline_writes_and_validates_static_data(tmp_path):
     assert (data_dir / "index.json").exists()
     assert (data_dir / "metadata/pipeline_status.json").exists()
     assert (data_dir / "events/latest.json").exists()
+    assert (data_dir / "geography/markets.geojson").exists()
     assert (frontend_data_dir / "signals/latest.json").exists()
+    assert (frontend_data_dir / "geography/markets.geojson").exists()
     assert (frontend_data_dir / "signals/history/charleston-sc.json").exists()
     assert validate_data_directory(data_dir)["status"] == "healthy"
 

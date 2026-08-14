@@ -122,6 +122,14 @@
       "last_updated": "2026-08-13T23:30:00Z",
       "record_count": 1000,
       "schema_version": "1.0.0"
+    },
+    {
+      "name": "market_geography",
+      "path": "geography/markets.geojson",
+      "format": "geojson",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 20,
+      "schema_version": "1.0.0"
     }
   ]
 }

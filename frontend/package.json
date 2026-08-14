@@ -12,6 +12,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "latest",
     "echarts": "latest",
+    "maplibre-gl": "latest",
     "vite": "latest",
     "react": "latest",
     "react-dom": "latest"

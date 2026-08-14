@@ -4,7 +4,11 @@ OpenCRE Terminal is an open-source, static-first commercial real estate intellig
 
 ## Current status
 
-Phases 1 through 5 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, configurable signals with complete score decompositions, and interactive terminal charts/tables. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**.
+Phases 1 through 6 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, configurable signals with complete score decompositions, interactive terminal charts/tables, and a MapLibre market-signal map. All provided datasets and displayed numbers are explicitly labeled **DEMO DATA — synthetic, not real market data**. Map points are representative city centroids, not market or administrative boundaries.
+
+## Phase 6: static geography
+
+Phase 6 adds an on-demand MapLibre signal view backed by a versioned 20-feature GeoJSON collection. These are representative city-centroid points for synthetic demo markets, not market, MSA, property, or administrative boundaries. The terminal map uses an empty local style and no map tiles, token, mapping API, spatial database, or application server.
 
 ## Local development
 

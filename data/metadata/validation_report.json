@@ -75,6 +75,11 @@
       "name": "signal_history_by_market",
       "records": 1000,
       "status": "valid"
+    },
+    {
+      "name": "market_geography",
+      "records": 20,
+      "status": "valid"
     }
   ]
 }

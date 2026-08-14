@@ -6,4 +6,5 @@ const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'opencre-
 export default defineConfig({
   base: process.env.GITHUB_ACTIONS ? `/${repositoryName}/` : '/',
   plugins: [react()],
+  optimizeDeps: { exclude: ['maplibre-gl'] },
 })

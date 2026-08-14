@@ -16,6 +16,12 @@ from pipelines.demo.generator import (
     generate_demo_frames,
 )
 from pipelines.frontend import publish_frontend_datasets
+from pipelines.geography.markets import (
+    GEOGRAPHY_METHODOLOGY,
+    GEOGRAPHY_SOURCE,
+    GEOGRAPHY_SOURCE_URL,
+    build_market_geojson,
+)
 from pipelines.schemas import DATASET_SPECS, validate_frame
 from pipelines.signals.config import DEFAULT_SIGNAL_DEFINITIONS, serialize_definitions
 from pipelines.signals.engine import (
@@ -87,6 +93,14 @@ def _dataset_index(config: PipelineConfig) -> dict[str, object]:
                 "record_count": 1_000,
                 "schema_version": "1.0.0",
             },
+            {
+                "name": "market_geography",
+                "path": "geography/markets.geojson",
+                "format": "geojson",
+                "last_updated": config.retrieved_at,
+                "record_count": 20,
+                "schema_version": "1.0.0",
+            },
         ],
     }
 
@@ -100,6 +114,7 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     signal_history = build_signal_history(market_analytics, DEFAULT_SIGNAL_DEFINITIONS)
     latest_signals = latest_signal_records(signal_history, DEFAULT_SIGNAL_DEFINITIONS)
     signal_rankings = build_signal_rankings(latest_signals)
+    market_geojson = build_market_geojson(frames.markets.to_dicts(), config)
     frame_by_name = {
         "markets": frames.markets,
         "market_metrics": frames.market_metrics,
@@ -126,6 +141,7 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     events = frame_by_name["events"].sort("event_date", descending=True).head(20)
     write_json(output_dir / "events/latest.json", events.to_dicts())
     write_json(output_dir / "markets/rankings.json", rankings)
+    write_json(output_dir / "geography/markets.geojson", market_geojson)
     write_json(output_dir / "signals/rankings.json", signal_rankings)
     write_json(
         output_dir / "signals/explanations.json", signal_explanations(latest_signals.to_dicts())
@@ -173,6 +189,13 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                     "update_frequency": "Generated on demand or in GitHub Actions.",
                     "methodology": SIGNAL_METHODOLOGY,
                 },
+                {
+                    "source": GEOGRAPHY_SOURCE,
+                    "source_url": GEOGRAPHY_SOURCE_URL,
+                    "license": "Static synthetic demo geography; no boundary claims are made.",
+                    "update_frequency": "Generated on demand or in GitHub Actions.",
+                    "methodology": GEOGRAPHY_METHODOLOGY,
+                },
             ],
         },
     )
@@ -201,6 +224,7 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                     "status": "validated",
                 },
                 {"name": "signal_history_by_market", "records": 1_000, "status": "validated"},
+                {"name": "market_geography", "records": 20, "status": "validated"},
             ],
         },
     )

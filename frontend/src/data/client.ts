@@ -85,6 +85,27 @@ export type DatasetIndex = {
   datasets: { name: string; path: string; format: string; record_count: number; schema_version: string }[]
 }
 
+export type MarketGeoFeature = {
+  type: 'Feature'
+  id: string
+  geometry: { type: 'Point'; coordinates: [number, number] }
+  properties: {
+    market_id: string
+    market_name: string
+    state: string
+    msa: string
+    geography_type: string
+    data_label: string
+  }
+}
+
+export type MarketGeoJson = {
+  type: 'FeatureCollection'
+  data_label: string
+  methodology: string
+  features: MarketGeoFeature[]
+}
+
 const dataUrl = (path: string) => `${import.meta.env.BASE_URL}data/v1/${path}`
 
 async function getJson<T>(path: string): Promise<T> {
@@ -101,3 +122,4 @@ export const getEvents = () => getJson<EventRecord[]>('events/latest.json')
 export const getPipelineStatus = () => getJson<PipelineStatus>('metadata/pipeline_status.json')
 export const getSources = () => getJson<SourceRegistry>('metadata/sources.json')
 export const getDatasetIndex = () => getJson<DatasetIndex>('index.json')
+export const getMarketGeography = () => getJson<MarketGeoJson>('geography/markets.geojson')

@@ -1,0 +1,569 @@
+{
+  "type": "FeatureCollection",
+  "data_label": "DEMO DATA — synthetic, deterministic, and not real market data.",
+  "source": "OpenCRE static geographic demo dataset",
+  "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+  "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "charleston-sc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9311,
+          32.7765
+        ]
+      },
+      "properties": {
+        "market_id": "charleston-sc",
+        "market_name": "Charleston",
+        "state": "SC",
+        "msa": "Charleston-North Charleston, SC",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Charleston, SC",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "columbus-oh",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.9988,
+          39.9612
+        ]
+      },
+      "properties": {
+        "market_id": "columbus-oh",
+        "market_name": "Columbus",
+        "state": "OH",
+        "msa": "Columbus, OH",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Columbus, OH",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "nashville-tn",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.7816,
+          36.1627
+        ]
+      },
+      "properties": {
+        "market_id": "nashville-tn",
+        "market_name": "Nashville",
+        "state": "TN",
+        "msa": "Nashville-Davidson--Murfreesboro--Franklin, TN",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Nashville, TN",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dallas-tx",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.797,
+          32.7767
+        ]
+      },
+      "properties": {
+        "market_id": "dallas-tx",
+        "market_name": "Dallas",
+        "state": "TX",
+        "msa": "Dallas-Fort Worth-Arlington, TX",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Dallas, TX",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "phoenix-az",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.074,
+          33.4484
+        ]
+      },
+      "properties": {
+        "market_id": "phoenix-az",
+        "market_name": "Phoenix",
+        "state": "AZ",
+        "msa": "Phoenix-Mesa-Chandler, AZ",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Phoenix, AZ",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "atlanta-ga",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.388,
+          33.749
+        ]
+      },
+      "properties": {
+        "market_id": "atlanta-ga",
+        "market_name": "Atlanta",
+        "state": "GA",
+        "msa": "Atlanta-Sandy Springs-Roswell, GA",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Atlanta, GA",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "austin-tx",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.7431,
+          30.2672
+        ]
+      },
+      "properties": {
+        "market_id": "austin-tx",
+        "market_name": "Austin",
+        "state": "TX",
+        "msa": "Austin-Round Rock-Georgetown, TX",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Austin, TX",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "denver-co",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.9903,
+          39.7392
+        ]
+      },
+      "properties": {
+        "market_id": "denver-co",
+        "market_name": "Denver",
+        "state": "CO",
+        "msa": "Denver-Aurora-Lakewood, CO",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Denver, CO",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "miami-fl",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.1918,
+          25.7617
+        ]
+      },
+      "properties": {
+        "market_id": "miami-fl",
+        "market_name": "Miami",
+        "state": "FL",
+        "msa": "Miami-Fort Lauderdale-West Palm Beach, FL",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Miami, FL",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "raleigh-nc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.6382,
+          35.7796
+        ]
+      },
+      "properties": {
+        "market_id": "raleigh-nc",
+        "market_name": "Raleigh",
+        "state": "NC",
+        "msa": "Raleigh-Cary, NC",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Raleigh, NC",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "salt-lake-city-ut",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.891,
+          40.7608
+        ]
+      },
+      "properties": {
+        "market_id": "salt-lake-city-ut",
+        "market_name": "Salt Lake City",
+        "state": "UT",
+        "msa": "Salt Lake City, UT",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Salt Lake City, UT",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "charlotte-nc",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.8431,
+          35.2271
+        ]
+      },
+      "properties": {
+        "market_id": "charlotte-nc",
+        "market_name": "Charlotte",
+        "state": "NC",
+        "msa": "Charlotte-Concord-Gastonia, NC-SC",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Charlotte, NC",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tampa-fl",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.4572,
+          27.9506
+        ]
+      },
+      "properties": {
+        "market_id": "tampa-fl",
+        "market_name": "Tampa",
+        "state": "FL",
+        "msa": "Tampa-St. Petersburg-Clearwater, FL",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Tampa, FL",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "las-vegas-nv",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1398,
+          36.1699
+        ]
+      },
+      "properties": {
+        "market_id": "las-vegas-nv",
+        "market_name": "Las Vegas",
+        "state": "NV",
+        "msa": "Las Vegas-Henderson-Paradise, NV",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Las Vegas, NV",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "minneapolis-mn",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.265,
+          44.9778
+        ]
+      },
+      "properties": {
+        "market_id": "minneapolis-mn",
+        "market_name": "Minneapolis",
+        "state": "MN",
+        "msa": "Minneapolis-St. Paul-Bloomington, MN-WI",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Minneapolis, MN",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "seattle-wa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.3321,
+          47.6062
+        ]
+      },
+      "properties": {
+        "market_id": "seattle-wa",
+        "market_name": "Seattle",
+        "state": "WA",
+        "msa": "Seattle-Tacoma-Bellevue, WA",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Seattle, WA",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chicago-il",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.6298,
+          41.8781
+        ]
+      },
+      "properties": {
+        "market_id": "chicago-il",
+        "market_name": "Chicago",
+        "state": "IL",
+        "msa": "Chicago-Naperville-Elgin, IL-IN-WI",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Chicago, IL",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "houston-tx",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.3698,
+          29.7604
+        ]
+      },
+      "properties": {
+        "market_id": "houston-tx",
+        "market_name": "Houston",
+        "state": "TX",
+        "msa": "Houston-The Woodlands-Sugar Land, TX",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Houston, TX",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "san-antonio-tx",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4936,
+          29.4241
+        ]
+      },
+      "properties": {
+        "market_id": "san-antonio-tx",
+        "market_name": "San Antonio",
+        "state": "TX",
+        "msa": "San Antonio-New Braunfels, TX",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "San Antonio, TX",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "orlando-fl",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.3792,
+          28.5383
+        ]
+      },
+      "properties": {
+        "market_id": "orlando-fl",
+        "market_name": "Orlando",
+        "state": "FL",
+        "msa": "Orlando-Kissimmee-Sanford, FL",
+        "geography_type": "representative_city_centroid",
+        "source": "OpenCRE static geographic demo dataset",
+        "source_url": "https://github.com/Coolgithub1/opencre-terminal/tree/main/docs/geography.md",
+        "retrieved_at": "2026-08-13T23:30:00Z",
+        "observation_date": "2026-08-13",
+        "metric": "market_centroid",
+        "value": 1,
+        "unit": "feature",
+        "geography": "Orlando, FL",
+        "methodology": "Representative city-centroid points used only to demonstrate static browser mapping. They are not legal market, MSA, submarket, property, county, ZIP, or census-tract boundaries.",
+        "data_label": "DEMO DATA — synthetic, deterministic, and not real market data."
+      }
+    }
+  ]
+}

@@ -12,3 +12,7 @@ The browser data layer in `frontend/src/data/client.ts` is the only frontend pat
 - Historical Parquet files remain published for pipeline and future analytical use, but the browser does not download them for its interactive chart.
 
 This preserves the static-first design while avoiding a startup download of all historical observations.
+
+## Map loading
+
+The Map page lazily loads `geography/markets.geojson`, a 20-feature static collection, with the current signals and current market analytics. It performs the join and asset-class filter in the browser. MapLibre draws an empty terminal basemap and local point layers, so opening the map does not contact a tile service or mapping API.

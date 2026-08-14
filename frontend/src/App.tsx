@@ -2,16 +2,17 @@ import { useState } from 'react'
 import { DashboardPage } from './pages/DashboardPage'
 import { DataSourcesPage } from './pages/DataSourcesPage'
 import { MarketsPage } from './pages/MarketsPage'
+import { MapPage } from './pages/MapPage'
 import { SignalsPage } from './pages/SignalsPage'
 import './styles.css'
 
-type Page = 'dashboard' | 'markets' | 'signals' | 'data-sources'
+type Page = 'dashboard' | 'markets' | 'signals' | 'map' | 'data-sources'
 
 const navigation: Array<{ label: string; page?: Page; phase?: string }> = [
   { label: 'Dashboard', page: 'dashboard' },
   { label: 'Markets', page: 'markets' },
   { label: 'Signals', page: 'signals' },
-  { label: 'Map', phase: 'Phase 6' },
+  { label: 'Map', page: 'map' },
   { label: 'Events', phase: 'Phase 7' },
   { label: 'Hotels', phase: 'Phase 10' },
   { label: 'Valuation', phase: 'Phase 11' },
@@ -40,6 +41,7 @@ function App() {
       {page === 'dashboard' && <DashboardPage onInspectSignal={inspectSignal} />}
       {page === 'markets' && <MarketsPage onInspectSignal={inspectSignal} />}
       {page === 'signals' && <SignalsPage initialMarketId={selectedMarketId} />}
+      {page === 'map' && <MapPage onInspectSignal={inspectSignal} />}
       {page === 'data-sources' && <DataSourcesPage />}
     </section>
   </main>

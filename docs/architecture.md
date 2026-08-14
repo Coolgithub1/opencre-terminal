@@ -19,3 +19,7 @@ The frontend obtains data only through `src/data/client.ts`. Dataset paths are r
 The Pages workflow runs the deterministic Python pipeline, installs frontend dependencies, runs type checking and a production build, uploads `frontend/dist`, and deploys it with the minimum Pages permissions. Repository content writes are not required by the deployment workflow.
 
 The `data-validation` workflow runs the Phase 2 generator and validator in an ephemeral GitHub Actions environment. It has read-only repository access and produces no persistent service or secret-dependent output.
+
+## Phase 6 geography
+
+The generator writes one static `geography/markets.geojson` FeatureCollection, with a representative city-centroid point for each synthetic market. The browser loads that small file only when the Map page opens and joins it to the current static signals and analytics in memory. MapLibre renders an intentionally empty terminal background and point layers; it requests no tiles, uses no map token or third-party mapping API, and requires no spatial database. Points never represent legal market, MSA, submarket, property, county, ZIP, or census boundaries.

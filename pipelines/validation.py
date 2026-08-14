@@ -148,4 +148,27 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
         ]
     )
 
+    geography_path = data_dir / "geography/markets.geojson"
+    if "geography/markets.geojson" not in indexed_paths:
+        raise DataValidationError("market geography is absent from data/index.json")
+    if not geography_path.exists():
+        raise DataValidationError("market geography output is missing")
+    geography = json.loads(geography_path.read_text(encoding="utf-8"))
+    features = geography.get("features", [])
+    if geography.get("type") != "FeatureCollection" or len(features) != 20:
+        raise DataValidationError("market geography must be a 20-feature GeoJSON collection")
+    market_ids = {feature.get("properties", {}).get("market_id") for feature in features}
+    if len(market_ids) != 20 or None in market_ids:
+        raise DataValidationError("market geography must have one unique market_id per feature")
+    for feature in features:
+        coordinates = feature.get("geometry", {}).get("coordinates", [])
+        if feature.get("geometry", {}).get("type") != "Point" or len(coordinates) != 2:
+            raise DataValidationError("market geography features must be point geometries")
+        longitude, latitude = coordinates
+        if not (-180 <= longitude <= 180 and -90 <= latitude <= 90):
+            raise DataValidationError(
+                "market geography coordinates are outside valid geographic bounds"
+            )
+    records.append({"name": "market_geography", "records": 20, "status": "valid"})
+
     return {"status": "healthy", "datasets": records}

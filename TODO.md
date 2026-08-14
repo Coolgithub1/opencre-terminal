@@ -38,9 +38,15 @@
 - [x] Add interactive dashboard, market table, signal filters, score decomposition, and lazy history chart.
 - [x] Add data-source catalogue and verify the browser loading strategy.
 
+## Phase 6 - MapLibre and static geographic datasets (complete)
+
+- [x] Generate and validate a provenance-carrying market-centroid GeoJSON collection.
+- [x] Publish GeoJSON in the versioned static frontend bundle.
+- [x] Add browser-only MapLibre signal points, asset-class filtering, market details, and a signal handoff.
+- [x] Document that the geometry is representative city-centroid points, not boundaries.
+
 ## Deferred phases
 
-- [ ] Phase 6: MapLibre and static geographic datasets.
 - [ ] Phase 7: RSS ingestion and deterministic event extraction.
 - [ ] Phase 8: public economic-data connectors.
 - [ ] Phase 9: deterministic backtesting.
