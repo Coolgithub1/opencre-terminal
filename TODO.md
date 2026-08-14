@@ -61,7 +61,14 @@
 
 ## Deferred phases
 
-- [ ] Phase 9: deterministic backtesting.
+## Phase 9 - deterministic backtesting (complete)
+
+- [x] Generate fixed market, asset-class, and all-market signal-threshold summaries for 3-, 6-, and 12-month horizons.
+- [x] Publish static sample size, mean, median, standard deviation, percentile, and hit-rate metrics.
+- [x] Add a selectable Backtesting terminal page and daily read-only artifact workflow.
+- [x] Document that all outputs are synthetic historical associations and do not establish causation.
+
+- [ ] Phase 10: client-side hotel spreadsheet parsing and validation.
 - [ ] Phase 10: client-side hotel spreadsheet parsing and validation.
 - [ ] Phase 11: hotel valuation and DCF.
 - [ ] Phase 12: hotel comparables and scenarios.

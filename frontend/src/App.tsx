@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { DashboardPage } from './pages/DashboardPage'
+import { BacktestingPage } from './pages/BacktestingPage'
 import { DataSourcesPage } from './pages/DataSourcesPage'
 import { EventsPage } from './pages/EventsPage'
 import { MarketsPage } from './pages/MarketsPage'
@@ -7,7 +8,7 @@ import { MapPage } from './pages/MapPage'
 import { SignalsPage } from './pages/SignalsPage'
 import './styles.css'
 
-type Page = 'dashboard' | 'markets' | 'signals' | 'map' | 'events' | 'data-sources'
+type Page = 'dashboard' | 'markets' | 'signals' | 'map' | 'events' | 'backtesting' | 'data-sources'
 
 const navigation: Array<{ label: string; page?: Page; phase?: string }> = [
   { label: 'Dashboard', page: 'dashboard' },
@@ -17,7 +18,7 @@ const navigation: Array<{ label: string; page?: Page; phase?: string }> = [
   { label: 'Events', page: 'events' },
   { label: 'Hotels', phase: 'Phase 10' },
   { label: 'Valuation', phase: 'Phase 11' },
-  { label: 'Backtesting', phase: 'Phase 9' },
+  { label: 'Backtesting', page: 'backtesting' },
   { label: 'Research', phase: 'Phase 13' },
   { label: 'Data Sources', page: 'data-sources' },
   { label: 'Methodology', phase: 'Docs' },
@@ -44,6 +45,7 @@ function App() {
       {page === 'signals' && <SignalsPage initialMarketId={selectedMarketId} />}
       {page === 'map' && <MapPage onInspectSignal={inspectSignal} />}
       {page === 'events' && <EventsPage />}
+      {page === 'backtesting' && <BacktestingPage />}
       {page === 'data-sources' && <DataSourcesPage />}
     </section>
   </main>

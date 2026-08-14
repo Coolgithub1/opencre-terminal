@@ -102,6 +102,28 @@ export type EconomicIndicator = {
   data_label: string
 }
 
+export type BacktestResult = {
+  result_id: string
+  scope_id: string
+  scope_type: 'universe' | 'asset_class' | 'market'
+  scope_name: string
+  market_id: string
+  asset_class: string
+  strategy: 'signal_threshold'
+  threshold: number
+  forward_horizon_months: number
+  historical_start: string
+  historical_end: string
+  sample_size: number
+  mean_outcome: number
+  median_outcome: number
+  standard_deviation: number
+  outcome_percentile: number
+  hit_rate: number
+  average_signal_score: number
+  data_label: string
+}
+
 export type SignalRankings = {
   as_of_date: string
   data_label: string
@@ -158,6 +180,7 @@ export const getSignalRankings = () => getJson<SignalRankings>('signals/rankings
 export const getMarketAnalytics = () => getJson<MarketAnalytics[]>('markets/latest_analytics.json')
 export const getEvents = () => getJson<EventRecord[]>('events/latest.json')
 export const getEconomicIndicators = () => getJson<EconomicIndicator[]>('economic/latest.json')
+export const getBacktestResults = () => getJson<BacktestResult[]>('backtesting/results.json')
 export const getRssArticles = () => getJson<RssArticle[]>('events/articles.json')
 export const getExtractedEvents = () => getJson<ExtractedEvent[]>('events/extracted.json')
 export const getPipelineStatus = () => getJson<PipelineStatus>('metadata/pipeline_status.json')

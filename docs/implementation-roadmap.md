@@ -10,7 +10,7 @@ The project is delivered in deliberately bounded phases to keep its static-first
 6. **Geography (complete):** static GeoJSON, MapLibre layers, market detail panels, and a representative-city-centroid disclaimer.
 7. **News events (complete):** configurable RSS registry, metadata-only parsing and deduplication, deterministic event extraction, conservative entity resolution, and market association.
 8. **Public economics (complete):** deterministic economic baseline, credential-aware BLS, Census, FRED, and SEC connectors, and artifact-only live retrieval.
-9. **Backtesting:** deterministic historical-association analysis.
+9. **Backtesting (complete):** deterministic, static historical-association analysis with explicit non-causal interpretation.
 10. **Hotel ingest:** browser-only workbook parsing, mapping, and validation.
 11. **Hotel valuation:** cap-rate, price-per-key, and DCF models.
 12. **Hotel comps and scenarios:** static comps, immediate client-side sensitivity calculations.

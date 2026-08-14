@@ -65,6 +65,11 @@
       "status": "validated"
     },
     {
+      "name": "backtest_results",
+      "records": 234,
+      "status": "validated"
+    },
+    {
       "name": "market_rankings",
       "records": 40,
       "status": "validated"

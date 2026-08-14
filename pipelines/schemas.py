@@ -211,6 +211,32 @@ DATASET_SPECS = (
         ),
         "json",
     ),
+    DatasetSpec(
+        "backtest_results",
+        Path("backtesting/results.json"),
+        234,
+        frozenset(
+            {
+                "result_id",
+                "scope_id",
+                "scope_type",
+                "scope_name",
+                "strategy",
+                "threshold",
+                "forward_horizon_months",
+                "historical_start",
+                "historical_end",
+                "sample_size",
+                "mean_outcome",
+                "median_outcome",
+                "standard_deviation",
+                "outcome_percentile",
+                "hit_rate",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "json",
+    ),
 )
 
 

@@ -49,6 +49,13 @@
       "license": "No external records are bundled. Live source terms apply to any Actions artifact.",
       "update_frequency": "Optional daily GitHub Actions artifact when credentials are configured.",
       "methodology": "Credential-aware BLS, Census, FRED, and SEC connectors write only a short-lived artifact and never expose credentials to the browser."
+    },
+    {
+      "source": "OpenCRE deterministic historical-association engine",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/blob/main/docs/backtesting.md",
+      "license": "Derived only from OpenCRE synthetic demo data.",
+      "update_frequency": "Generated on demand or in GitHub Actions.",
+      "methodology": "For each signal observation, the engine compares the score with the same synthetic market's rent-growth value three, six, or twelve months later. Summaries are descriptive historical associations only: they do not claim causation or predict future performance. Hit rate is the share of selected observations above the all-market median forward outcome at the same horizon."
     }
   ]
 }

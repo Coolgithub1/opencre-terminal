@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import extractedEvents from '../../public/data/v1/events/extracted.json'
 import economicIndicators from '../../public/data/v1/economic/latest.json'
+import backtestResults from '../../public/data/v1/backtesting/results.json'
 import signals from '../../public/data/v1/signals/latest.json'
 
 describe('published frontend data contract', () => {
@@ -16,6 +17,12 @@ describe('published frontend data contract', () => {
     expect(economicIndicators.every((indicator) => indicator.data_label.includes('DEMO DATA'))).toBe(true)
     expect(economicIndicators.every((indicator) => typeof indicator.value === 'number')).toBe(true)
     expect(economicIndicators.every((indicator) => typeof indicator.change === 'number')).toBe(true)
+  })
+
+  it('contains static non-causal historical-association configurations', () => {
+    expect(backtestResults).toHaveLength(234)
+    expect(backtestResults.every((result) => result.data_label.includes('DEMO DATA'))).toBe(true)
+    expect(backtestResults.every((result) => result.hit_rate >= 0 && result.hit_rate <= 100)).toBe(true)
   })
 
   it('contains traceable, deterministic RSS event records', () => {

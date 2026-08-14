@@ -62,6 +62,11 @@
       "status": "valid"
     },
     {
+      "name": "backtest_results",
+      "records": 234,
+      "status": "valid"
+    },
+    {
       "name": "market_rankings",
       "records": 40,
       "status": "valid"

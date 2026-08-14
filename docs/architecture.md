@@ -35,3 +35,7 @@ The separate `rss-ingestion.yml` workflow runs every 30 minutes and reads only r
 The deterministic build writes a five-series synthetic United States economic dataset for the dashboard. `economic/history.parquet` preserves 50 monthly points per series and `economic/latest.json` is the compact browser payload. Both carry the same demo label and provenance fields as the rest of the bundle.
 
 `economic-data.yml` is a separately scheduled, read-only workflow. It can access BLS, Census, FRED, and SEC connector credentials through Actions secrets, then retains only normalized public records and connector health as a seven-day artifact. It never writes live source data to the repository or Pages bundle. Missing credentials return `skipped` without calling the source; configured-source failures are reported per connector without preventing the others from running.
+
+## Phase 9 backtesting
+
+The deterministic pipeline joins a synthetic signal observation to the same synthetic market's future rent-growth observation at a 3-, 6-, or 12-month offset. It materializes a small selection grid covering each market, each asset class, and the total universe at thresholds 50, 60, and 70. The React page only filters this 234-record JSON file; it does not calculate outcomes in the browser or contact a service. The standalone workflow reproduces it as a short-lived read-only artifact.

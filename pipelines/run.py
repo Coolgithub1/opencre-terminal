@@ -4,8 +4,16 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import polars as pl
+
 from pipelines.analytics.market_state import build_market_analytics, latest_market_analytics
 from pipelines.analytics.rankings import build_rankings
+from pipelines.backtesting.engine import (
+    BACKTEST_METHODOLOGY,
+    BACKTEST_SOURCE,
+    BACKTEST_SOURCE_URL,
+    build_backtest_results,
+)
 from pipelines.common.config import PipelineConfig
 from pipelines.common.io import write_json, write_parquet
 from pipelines.demo.generator import (
@@ -147,6 +155,7 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     signal_rankings = build_signal_rankings(latest_signals)
     economic_history = build_economic_history(config)
     latest_economics = latest_economic_indicators(economic_history)
+    backtest_results = build_backtest_results(signal_history, frames.market_metrics)
     market_geojson = build_market_geojson(frames.markets.to_dicts(), config)
     rss_articles = build_demo_articles(frames.markets.to_dicts(), config)
     rss_events = extract_events(rss_articles, market_references(frames.markets.to_dicts()))
@@ -165,6 +174,7 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
         "latest_signals": latest_signals,
         "economic_history": economic_history,
         "economic_indicators": latest_economics,
+        "backtest_results": pl.DataFrame(backtest_results),
     }
     output_dir = config.output_dir
 
@@ -264,6 +274,13 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                         "Credential-aware BLS, Census, FRED, and SEC connectors write only a "
                         "short-lived artifact and never expose credentials to the browser."
                     ),
+                },
+                {
+                    "source": BACKTEST_SOURCE,
+                    "source_url": BACKTEST_SOURCE_URL,
+                    "license": "Derived only from OpenCRE synthetic demo data.",
+                    "update_frequency": "Generated on demand or in GitHub Actions.",
+                    "methodology": BACKTEST_METHODOLOGY,
                 },
             ],
         },

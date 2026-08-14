@@ -164,6 +164,21 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
         for indicator in economic_indicators
     ):
         raise DataValidationError("economic indicators require numeric values and monthly changes")
+
+    backtest_path = data_dir / "backtesting/results.json"
+    if "backtesting/results.json" not in indexed_paths:
+        raise DataValidationError("backtest results are absent from data/index.json")
+    backtest_results = _json_rows(backtest_path)
+    if len(backtest_results) != 234:
+        raise DataValidationError("expected 234 backtest result configurations")
+    if any(
+        result.get("sample_size", -1) < 0
+        or not 0 <= float(result.get("hit_rate", -1)) <= 100
+        or not 0 <= float(result.get("outcome_percentile", -1)) <= 100
+        for result in backtest_results
+    ):
+        raise DataValidationError("backtest summary metrics are outside their valid range")
+
     geography_path = data_dir / "geography/markets.geojson"
     if "geography/markets.geojson" not in indexed_paths:
         raise DataValidationError("market geography is absent from data/index.json")

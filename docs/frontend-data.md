@@ -10,6 +10,7 @@ The browser data layer in `frontend/src/data/client.ts` is the only frontend pat
 - Markets loads the 20-record current analytics dataset.
 - Signals loads 20 current scores first, then fetches exactly one 50-record file from `signals/history/{market_id}.json` after a market is selected.
 - Events lazily loads the 20-record `events/extracted.json` rule output and matching 20-record `events/articles.json` feed metadata only when its page is opened.
+- Backtesting lazily loads the 234-record `backtesting/results.json` selection grid only when its page is opened.
 - Historical Parquet files remain published for pipeline and future analytical use, but the browser does not download them for its interactive chart.
 
 This preserves the static-first design while avoiding a startup download of all historical observations.
@@ -17,6 +18,10 @@ This preserves the static-first design while avoiding a startup download of all 
 ## Economic data boundary
 
 The dashboard's `economic/latest.json` is a five-record deterministic synthetic baseline; the matching 250-record Parquet history remains browser-unloaded. BLS, Census, FRED, and SEC retrieval never runs in the browser and does not affect this bundle. When configured, those connectors execute only in a separate GitHub Actions workflow and retain their normalized results as a short-lived artifact.
+
+## Backtesting boundary
+
+The browser selects from precomputed backtest summaries and does not execute a model, access live data, or infer a causal relationship. The supporting pipeline is reproducible and uses the synthetic market and signal histories only.
 
 ## Map loading
 

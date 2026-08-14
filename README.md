@@ -4,7 +4,7 @@ OpenCRE Terminal is an open-source, static-first commercial real estate intellig
 
 ## Current status
 
-Phases 1 through 8 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, configurable signals with complete score decompositions, interactive terminal charts/tables, a MapLibre market-signal map, rule-based RSS event extraction, and credential-aware public economic connectors. All displayed terminal values are explicitly labeled **DEMO DATA — synthetic, not real market data**. Map points are representative city centroids, not market or administrative boundaries.
+Phases 1 through 9 are complete. The project includes a Vite + React + TypeScript terminal shell, GitHub Pages deployment, reproducible static datasets, deterministic market analytics/rankings, configurable signals with complete score decompositions, interactive terminal charts/tables, a MapLibre market-signal map, rule-based RSS event extraction, credential-aware public economic connectors, and static historical-association backtesting. All displayed terminal values are explicitly labeled **DEMO DATA — synthetic, not real market data**. Map points are representative city centroids, not market or administrative boundaries.
 
 ## Phase 6: static geography
 
@@ -17,6 +17,10 @@ Phase 7 adds a configurable publisher RSS registry, metadata-only parser, determ
 ## Phase 8: public economic connectors
 
 The dashboard now includes a deterministic five-series United States economic baseline, generated with the same fixed seed and explicitly labeled as synthetic. A separate daily, read-only workflow can retrieve narrow BLS, Census, FRED, and SEC records only when the required GitHub Actions secrets are configured. It keeps live records in a seven-day artifact rather than deploying them to Pages, skips absent credentials without making a request, and never exposes credentials to the browser. See [docs/economic.md](docs/economic.md) for the reviewed endpoints, activation requirements, and source-governance policy.
+
+## Phase 9: deterministic backtesting
+
+The new Backtesting view filters a precomputed grid of synthetic signal-threshold observations by market or asset-class scope, threshold, and 3-, 6-, or 12-month forward horizon. It reports sample size, mean, median, standard deviation, percentile, and hit rate as historical associations only — never causation, prediction, or investment advice. See [docs/backtesting.md](docs/backtesting.md).
 
 ## Local development
 
@@ -42,7 +46,7 @@ npm run typecheck
 npm run build
 ```
 
-See [docs/architecture.md](docs/architecture.md), [docs/frontend-data.md](docs/frontend-data.md), [docs/analytics.md](docs/analytics.md), [docs/signals.md](docs/signals.md), [docs/geography.md](docs/geography.md), [docs/rss.md](docs/rss.md), [docs/economic.md](docs/economic.md), [docs/implementation-roadmap.md](docs/implementation-roadmap.md), and [TODO.md](TODO.md).
+See [docs/architecture.md](docs/architecture.md), [docs/frontend-data.md](docs/frontend-data.md), [docs/analytics.md](docs/analytics.md), [docs/signals.md](docs/signals.md), [docs/geography.md](docs/geography.md), [docs/rss.md](docs/rss.md), [docs/economic.md](docs/economic.md), [docs/backtesting.md](docs/backtesting.md), [docs/implementation-roadmap.md](docs/implementation-roadmap.md), and [TODO.md](TODO.md).
 
 ## License and data
 
