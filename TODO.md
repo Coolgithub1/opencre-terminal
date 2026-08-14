@@ -52,9 +52,15 @@
 - [x] Add exact and conservative fuzzy entity resolution, transparent event phrases, confidence, and provenance.
 - [x] Add a terminal Events view with filters, source links, and extraction detail.
 
+## Phase 8 - public economic-data connectors (complete)
+
+- [x] Generate and validate a five-series deterministic synthetic economic baseline for the static terminal.
+- [x] Add credential-aware BLS, Census, FRED, and SEC connector implementations with secret-safe skipped and failed statuses.
+- [x] Run optional live retrieval only in a read-only, short-lived GitHub Actions artifact.
+- [x] Document source requirements, terms review, provenance, activation, and deployment boundaries.
+
 ## Deferred phases
 
-- [ ] Phase 8: public economic-data connectors.
 - [ ] Phase 9: deterministic backtesting.
 - [ ] Phase 10: client-side hotel spreadsheet parsing and validation.
 - [ ] Phase 11: hotel valuation and DCF.

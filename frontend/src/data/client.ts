@@ -90,6 +90,18 @@ export type PipelineStatus = {
   datasets: { name: string; records: number; status: string }[]
 }
 
+export type EconomicIndicator = {
+  indicator_key: string
+  indicator_name: string
+  period_label: string
+  previous_value: number
+  change: number
+  value: number
+  unit: string
+  observation_date: string
+  data_label: string
+}
+
 export type SignalRankings = {
   as_of_date: string
   data_label: string
@@ -145,6 +157,7 @@ export const getSignalHistory = (marketId: string) => getJson<SignalHistoryPoint
 export const getSignalRankings = () => getJson<SignalRankings>('signals/rankings.json')
 export const getMarketAnalytics = () => getJson<MarketAnalytics[]>('markets/latest_analytics.json')
 export const getEvents = () => getJson<EventRecord[]>('events/latest.json')
+export const getEconomicIndicators = () => getJson<EconomicIndicator[]>('economic/latest.json')
 export const getRssArticles = () => getJson<RssArticle[]>('events/articles.json')
 export const getExtractedEvents = () => getJson<ExtractedEvent[]>('events/extracted.json')
 export const getPipelineStatus = () => getJson<PipelineStatus>('metadata/pipeline_status.json')

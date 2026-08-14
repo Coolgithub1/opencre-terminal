@@ -15,6 +15,13 @@ from pipelines.demo.generator import (
     SOURCE_URL,
     generate_demo_frames,
 )
+from pipelines.economic.demo import (
+    ECONOMIC_DEMO_METHODOLOGY,
+    ECONOMIC_DEMO_SOURCE,
+    ECONOMIC_DEMO_SOURCE_URL,
+    build_economic_history,
+    latest_economic_indicators,
+)
 from pipelines.frontend import publish_frontend_datasets
 from pipelines.geography.markets import (
     GEOGRAPHY_METHODOLOGY,
@@ -138,6 +145,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
     signal_history = build_signal_history(market_analytics, DEFAULT_SIGNAL_DEFINITIONS)
     latest_signals = latest_signal_records(signal_history, DEFAULT_SIGNAL_DEFINITIONS)
     signal_rankings = build_signal_rankings(latest_signals)
+    economic_history = build_economic_history(config)
+    latest_economics = latest_economic_indicators(economic_history)
     market_geojson = build_market_geojson(frames.markets.to_dicts(), config)
     rss_articles = build_demo_articles(frames.markets.to_dicts(), config)
     rss_events = extract_events(rss_articles, market_references(frames.markets.to_dicts()))
@@ -154,6 +163,8 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
         "latest_market_analytics": latest_analytics,
         "signal_history": signal_history,
         "latest_signals": latest_signals,
+        "economic_history": economic_history,
+        "economic_indicators": latest_economics,
     }
     output_dir = config.output_dir
 
@@ -231,6 +242,28 @@ def run_demo_pipeline(config: PipelineConfig) -> dict[str, object]:
                     "license": "Synthetic metadata; no third-party article content.",
                     "update_frequency": "Generated on demand or in GitHub Actions.",
                     "methodology": f"{RSS_DEMO_METHODOLOGY} {EVENT_METHODOLOGY}",
+                },
+                {
+                    "source": ECONOMIC_DEMO_SOURCE,
+                    "source_url": ECONOMIC_DEMO_SOURCE_URL,
+                    "license": "Synthetic demo data; no public-source values are included.",
+                    "update_frequency": "Generated on demand or in GitHub Actions.",
+                    "methodology": ECONOMIC_DEMO_METHODOLOGY,
+                },
+                {
+                    "source": "OpenCRE optional public economic connectors",
+                    "source_url": "https://github.com/Coolgithub1/opencre-terminal/blob/main/docs/economic.md",
+                    "license": (
+                        "No external records are bundled. Live source terms apply to any "
+                        "Actions artifact."
+                    ),
+                    "update_frequency": (
+                        "Optional daily GitHub Actions artifact when credentials are configured."
+                    ),
+                    "methodology": (
+                        "Credential-aware BLS, Census, FRED, and SEC connectors write only a "
+                        "short-lived artifact and never expose credentials to the browser."
+                    ),
                 },
             ],
         },

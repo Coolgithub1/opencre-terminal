@@ -35,6 +35,20 @@
       "license": "Synthetic metadata; no third-party article content.",
       "update_frequency": "Generated on demand or in GitHub Actions.",
       "methodology": "Deterministic synthetic RSS feed metadata used to test parsing, deduplication, entity resolution, market association, and rule-based event extraction. It is not reporting or an observation of real events. Rule-based extraction matches transparent event phrases, exact aliases, conservative fuzzy aliases, and configured market names. Ambiguous entity matches are discarded rather than merged."
+    },
+    {
+      "source": "OpenCRE deterministic economic demo",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/blob/main/docs/economic.md",
+      "license": "Synthetic demo data; no public-source values are included.",
+      "update_frequency": "Generated on demand or in GitHub Actions.",
+      "methodology": "Five illustrative United States economic series generated from fixed parameters and a fixed seed. Values are synthetic, deterministic, and not observations from a public source."
+    },
+    {
+      "source": "OpenCRE optional public economic connectors",
+      "source_url": "https://github.com/Coolgithub1/opencre-terminal/blob/main/docs/economic.md",
+      "license": "No external records are bundled. Live source terms apply to any Actions artifact.",
+      "update_frequency": "Optional daily GitHub Actions artifact when credentials are configured.",
+      "methodology": "Credential-aware BLS, Census, FRED, and SEC connectors write only a short-lived artifact and never expose credentials to the browser."
     }
   ]
 }

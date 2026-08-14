@@ -148,6 +148,22 @@ def validate_data_directory(data_dir: Path) -> dict[str, object]:
         ]
     )
 
+    economic_latest_path = data_dir / "economic/latest.json"
+    if "economic/latest.json" not in indexed_paths:
+        raise DataValidationError("economic indicators are absent from data/index.json")
+    if not economic_latest_path.exists():
+        raise DataValidationError("economic indicator output is missing")
+    economic_indicators = _json_rows(economic_latest_path)
+    if len(economic_indicators) != 5:
+        raise DataValidationError("expected five current economic indicators")
+    if len({indicator.get("indicator_key") for indicator in economic_indicators}) != 5:
+        raise DataValidationError("economic indicator keys must be unique")
+    if any(
+        not isinstance(indicator.get("value"), (float, int))
+        or not isinstance(indicator.get("change"), (float, int))
+        for indicator in economic_indicators
+    ):
+        raise DataValidationError("economic indicators require numeric values and monthly changes")
     geography_path = data_dir / "geography/markets.geojson"
     if "geography/markets.geojson" not in indexed_paths:
         raise DataValidationError("market geography is absent from data/index.json")

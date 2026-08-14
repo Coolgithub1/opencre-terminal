@@ -20,10 +20,12 @@ def test_pipeline_writes_and_validates_static_data(tmp_path):
     assert (data_dir / "events/latest.json").exists()
     assert (data_dir / "events/articles.json").exists()
     assert (data_dir / "events/extracted.json").exists()
+    assert (data_dir / "economic/latest.json").exists()
     assert (data_dir / "geography/markets.geojson").exists()
     assert (frontend_data_dir / "signals/latest.json").exists()
     assert (frontend_data_dir / "geography/markets.geojson").exists()
     assert (frontend_data_dir / "events/extracted.json").exists()
+    assert (frontend_data_dir / "economic/latest.json").exists()
     assert (frontend_data_dir / "signals/history/charleston-sc.json").exists()
     assert validate_data_directory(data_dir)["status"] == "healthy"
 

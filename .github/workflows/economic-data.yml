@@ -1,0 +1,32 @@
+name: Fetch optional public economic indicators
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    env:
+      BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+      CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      SEC_CIK: ${{ secrets.SEC_CIK }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+      - run: python scripts/run_economic_pipeline.py --output-dir economic-output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-economic-indicators
+          path: economic-output
+          retention-days: 7

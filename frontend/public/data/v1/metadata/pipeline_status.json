@@ -55,6 +55,16 @@
       "status": "validated"
     },
     {
+      "name": "economic_history",
+      "records": 250,
+      "status": "validated"
+    },
+    {
+      "name": "economic_indicators",
+      "records": 5,
+      "status": "validated"
+    },
+    {
       "name": "market_rankings",
       "records": 40,
       "status": "validated"

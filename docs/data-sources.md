@@ -16,4 +16,8 @@ The terminal uses 20 synthetic RSS fixture records in `data/events/articles.json
 
 The separately scheduled public RSS workflow reads Federal Reserve Board press-release metadata from the reviewed registry. Its endpoint and usage guidance are recorded in `pipelines/rss/feeds.json`, and the Federal Reserve publishes its available feeds at `https://www.federalreserve.gov/feeds/feeds.htm`. The workflow retains only titles, URLs, dates, and feed summaries in a short-lived artifact, preserves publisher attribution, and never fetches article bodies. It does not alter the GitHub Pages demo dataset.
 
-Public Census, FRED, and SEC connectors remain later phases. They will only be added with documented licenses, terms, attribution, retrieval timestamps, and transformations. No connector may expose secrets to the browser.
+## Phase 8: synthetic economic baseline and optional public connectors
+
+`data/economic/latest.json` contains five current illustrative United States economic indicators, and `data/economic/history.parquet` contains their 50-month synthetic histories. Like every other terminal dataset, these records are deterministic synthetic demo data; they are not observations copied or derived from a public agency. Each carries complete provenance pointing to the generation methodology.
+
+The reviewed BLS, Census, FRED, and SEC connectors are intentionally separate from Pages. The daily read-only workflow writes live, normalized records only to a seven-day Actions artifact when the matching GitHub Actions credentials are available. It skips unavailable credentials without a network call, writes no secrets or credential-bearing request URLs to the artifact, and cannot modify the static terminal. Detailed activation, attribution, and source-governance requirements are in [economic.md](economic.md).

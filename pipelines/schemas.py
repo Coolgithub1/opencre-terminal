@@ -179,6 +179,38 @@ DATASET_SPECS = (
         frozenset({"hotel_id", "market_id", "rooms", "adr", "occupancy", *PROVENANCE_COLUMNS}),
         "parquet",
     ),
+    DatasetSpec(
+        "economic_history",
+        Path("economic/history.parquet"),
+        250,
+        frozenset(
+            {
+                "indicator_key",
+                "indicator_name",
+                "period_label",
+                "previous_value",
+                "change",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "parquet",
+    ),
+    DatasetSpec(
+        "economic_indicators",
+        Path("economic/latest.json"),
+        5,
+        frozenset(
+            {
+                "indicator_key",
+                "indicator_name",
+                "period_label",
+                "previous_value",
+                "change",
+                *PROVENANCE_COLUMNS,
+            }
+        ),
+        "json",
+    ),
 )
 
 

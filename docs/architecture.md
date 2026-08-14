@@ -8,7 +8,7 @@ Public sources -> GitHub Actions pipelines -> JSON / Parquet datasets -> GitHub 
 
 GitHub Actions will eventually fetch, validate, normalize, analyze, and publish datasets. Python and DuckDB may be used in those ephemeral workflows, but no database service is deployed. Secrets remain inside Actions and are never bundled into the frontend.
 
-Phases 1 through 7 contain the frontend foundation, deterministic synthetic data, audited market analytics/rankings, versioned signal definitions, static geography, and rule-based RSS events. The Python layer uses Polars and NumPy to generate, normalize, and score test records, then uses in-memory DuckDB to write and validate Parquet. It makes no API calls during the deterministic Pages build, starts no service, and retains no database file. The separate RSS workflow makes narrowly scoped publisher-feed requests and writes an ephemeral artifact only. Later phases will add public-data pipelines and an optional data-provider interface for legitimately licensed providers. No proprietary-data scraping, AI model, embedding system, or LLM integration is in scope.
+Phases 1 through 8 contain the frontend foundation, deterministic synthetic data, audited market analytics/rankings, versioned signal definitions, static geography, rule-based RSS events, and a deterministic economic baseline. The Python layer uses Polars and NumPy to generate, normalize, and score test records, then uses in-memory DuckDB to write and validate Parquet. It makes no API calls during the deterministic Pages build, starts no service, and retains no database file. The separate RSS and credential-aware economic workflows make narrowly scoped public-source requests and write ephemeral artifacts only. No proprietary-data scraping, AI model, embedding system, or LLM integration is in scope.
 
 ## Frontend data contract
 
@@ -29,3 +29,9 @@ The generator writes one static `geography/markets.geojson` FeatureCollection, w
 The terminal's generated `events/articles.json`, `events/extracted.json`, and `events/latest.json` use a deterministic synthetic RSS fixture so every Pages build remains reproducible. The event engine matches configured phrases, canonical entity aliases, and market-name dictionaries; an event is dropped if an entity or market is ambiguous. It fetches neither article pages nor any full-text content.
 
 The separate `rss-ingestion.yml` workflow runs every 30 minutes and reads only reviewed publisher RSS XML endpoints from `pipelines/rss/feeds.json`. It creates a short-lived Actions artifact rather than changing the deployed bundle, which keeps live public metadata distinct from the clearly labeled demo terminal until source-level review and release governance are added. It has read-only repository permissions and no secrets.
+
+## Phase 8 public economics
+
+The deterministic build writes a five-series synthetic United States economic dataset for the dashboard. `economic/history.parquet` preserves 50 monthly points per series and `economic/latest.json` is the compact browser payload. Both carry the same demo label and provenance fields as the rest of the bundle.
+
+`economic-data.yml` is a separately scheduled, read-only workflow. It can access BLS, Census, FRED, and SEC connector credentials through Actions secrets, then retains only normalized public records and connector health as a seven-day artifact. It never writes live source data to the repository or Pages bundle. Missing credentials return `skipped` without calling the source; configured-source failures are reported per connector without preventing the others from running.

@@ -84,6 +84,22 @@
       "schema_version": "1.0.0"
     },
     {
+      "name": "economic_history",
+      "path": "economic/history.parquet",
+      "format": "parquet",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 250,
+      "schema_version": "1.0.0"
+    },
+    {
+      "name": "economic_indicators",
+      "path": "economic/latest.json",
+      "format": "json",
+      "last_updated": "2026-08-13T23:30:00Z",
+      "record_count": 5,
+      "schema_version": "1.0.0"
+    },
+    {
       "name": "market_rankings",
       "path": "markets/rankings.json",
       "format": "json",

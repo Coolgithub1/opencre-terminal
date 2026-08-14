@@ -52,6 +52,16 @@
       "status": "valid"
     },
     {
+      "name": "economic_history",
+      "records": 250,
+      "status": "valid"
+    },
+    {
+      "name": "economic_indicators",
+      "records": 5,
+      "status": "valid"
+    },
+    {
       "name": "market_rankings",
       "records": 40,
       "status": "valid"
